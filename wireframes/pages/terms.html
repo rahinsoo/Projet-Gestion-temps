@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Conditions Générales d'Utilisation - TimeManager">
+  <title>CGU - TimeManager</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/themes.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="../assets/logo.svg" alt="TimeManager" class="sidebar-logo">
+        <span class="sidebar-title">TimeManager</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Principal</div>
+          <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+          <a href="calendar.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Calendrier</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Légal</div>
+          <a href="legal.html" class="nav-item">
+            <span class="nav-icon">📜</span>
+            <span class="nav-label">Mentions légales</span>
+          </a>
+          <a href="terms.html" class="nav-item active">
+            <span class="nav-icon">📋</span>
+            <span class="nav-label">CGU</span>
+          </a>
+          <a href="privacy.html" class="nav-item">
+            <span class="nav-icon">🔒</span>
+            <span class="nav-label">Confidentialité</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="nav-item">
+          <span class="nav-icon">🚪</span>
+          <span class="nav-label">Déconnexion</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Overlay pour mobile -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="topbar-right">
+          <button class="topbar-icon-btn" data-theme-toggle aria-label="Changer de thème">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Contenu de la page -->
+      <div class="page-content">
+        <div class="legal-container">
+          <!-- En-tête -->
+          <div class="legal-header">
+            <h1>Conditions Générales d'Utilisation</h1>
+            <p class="legal-date">Dernière mise à jour : 1er décembre 2024</p>
+          </div>
+
+          <!-- Navigation rapide -->
+          <nav class="legal-toc">
+            <h3>📋 Table des matières</h3>
+            <ul>
+              <li><a href="#objet">Article 1 - Objet</a></li>
+              <li><a href="#definitions">Article 2 - Définitions</a></li>
+              <li><a href="#acces">Article 3 - Accès au service</a></li>
+              <li><a href="#inscription">Article 4 - Inscription</a></li>
+              <li><a href="#utilisation">Article 5 - Utilisation du service</a></li>
+              <li><a href="#obligations">Article 6 - Obligations de l'utilisateur</a></li>
+              <li><a href="#donnees">Article 7 - Données personnelles</a></li>
+              <li><a href="#propriete">Article 8 - Propriété intellectuelle</a></li>
+              <li><a href="#responsabilite">Article 9 - Responsabilité</a></li>
+              <li><a href="#modification">Article 10 - Modification des CGU</a></li>
+              <li><a href="#resiliation">Article 11 - Résiliation</a></li>
+              <li><a href="#droit">Article 12 - Droit applicable</a></li>
+            </ul>
+          </nav>
+
+          <!-- Contenu -->
+          <section id="objet" class="legal-section">
+            <h2>Article 1 - Objet</h2>
+            <p>Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») ont pour objet de définir les modalités et conditions d'utilisation des services proposés par TimeManager (ci-après « le Service »), ainsi que de définir les droits et obligations des parties dans ce cadre.</p>
+            <p>L'utilisation du Service implique l'acceptation pleine et entière des présentes CGU. Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser le Service.</p>
+          </section>
+
+          <section id="definitions" class="legal-section">
+            <h2>Article 2 - Définitions</h2>
+            <p>Dans les présentes CGU, les termes suivants ont la signification qui leur est donnée ci-après :</p>
+            <ul>
+              <li><strong>« Utilisateur »</strong> : toute personne physique ou morale inscrite sur la plateforme TimeManager</li>
+              <li><strong>« Service »</strong> : l'ensemble des fonctionnalités proposées par TimeManager pour la gestion du temps de travail</li>
+              <li><strong>« Compte »</strong> : espace personnel créé par l'Utilisateur pour accéder au Service</li>
+              <li><strong>« Contenu »</strong> : toute donnée, information ou document publié par l'Utilisateur sur le Service</li>
+              <li><strong>« Administrateur »</strong> : Utilisateur disposant de droits étendus de gestion</li>
+              <li><strong>« Responsable (N+1) »</strong> : Utilisateur ayant des droits de supervision d'équipe</li>
+            </ul>
+          </section>
+
+          <section id="acces" class="legal-section">
+            <h2>Article 3 - Accès au service</h2>
+            <p>Le Service est accessible 24 heures sur 24 et 7 jours sur 7, sous réserve des périodes de maintenance et des pannes éventuelles.</p>
+            <p>TimeManager se réserve le droit de suspendre temporairement l'accès au Service pour des raisons techniques, sans que cette interruption ne puisse engager sa responsabilité.</p>
+            <p>L'accès au Service nécessite :</p>
+            <ul>
+              <li>Une connexion Internet haut débit</li>
+              <li>Un navigateur web récent (Chrome, Firefox, Safari, Edge)</li>
+              <li>Un compte utilisateur valide</li>
+            </ul>
+          </section>
+
+          <section id="inscription" class="legal-section">
+            <h2>Article 4 - Inscription</h2>
+            <p>Pour utiliser le Service, l'Utilisateur doit créer un compte en fournissant des informations exactes et complètes. L'Utilisateur s'engage à maintenir ces informations à jour.</p>
+            <p>L'inscription est soumise à l'approbation de l'administrateur de l'entreprise ou de l'organisation de l'Utilisateur.</p>
+            <p>L'Utilisateur est seul responsable de la confidentialité de ses identifiants de connexion et de toutes les activités effectuées via son compte.</p>
+          </section>
+
+          <section id="utilisation" class="legal-section">
+            <h2>Article 5 - Utilisation du service</h2>
+            <p>Le Service permet à l'Utilisateur de :</p>
+            <ul>
+              <li>Enregistrer et suivre son temps de travail</li>
+              <li>Gérer ses projets et tâches</li>
+              <li>Visualiser ses statistiques personnelles</li>
+              <li>Collaborer avec les membres de son équipe</li>
+              <li>Générer des rapports d'activité</li>
+            </ul>
+            <p>L'Utilisateur s'engage à utiliser le Service de manière loyale et conformément à sa destination.</p>
+          </section>
+
+          <section id="obligations" class="legal-section">
+            <h2>Article 6 - Obligations de l'utilisateur</h2>
+            <p>L'Utilisateur s'engage à :</p>
+            <ul>
+              <li>Fournir des informations exactes et sincères</li>
+              <li>Ne pas usurper l'identité d'un tiers</li>
+              <li>Ne pas tenter d'accéder aux données d'autres utilisateurs sans autorisation</li>
+              <li>Ne pas utiliser le Service à des fins illicites ou contraires aux présentes CGU</li>
+              <li>Ne pas tenter de contourner les mesures de sécurité du Service</li>
+              <li>Respecter les droits de propriété intellectuelle de TimeManager et des tiers</li>
+              <li>Signaler toute faille de sécurité ou utilisation frauduleuse dont il aurait connaissance</li>
+            </ul>
+          </section>
+
+          <section id="donnees" class="legal-section">
+            <h2>Article 7 - Données personnelles</h2>
+            <p>TimeManager collecte et traite les données personnelles des Utilisateurs conformément au Règlement Général sur la Protection des Données (RGPD) et à la législation française applicable.</p>
+            <p>Pour plus d'informations sur le traitement de vos données personnelles, veuillez consulter notre <a href="privacy.html">Politique de Confidentialité</a>.</p>
+          </section>
+
+          <section id="propriete" class="legal-section">
+            <h2>Article 8 - Propriété intellectuelle</h2>
+            <p>Le Service, y compris sa structure, son design, ses textes, images, logos, et fonctionnalités, est la propriété exclusive de TimeManager SAS et est protégé par les lois relatives à la propriété intellectuelle.</p>
+            <p>L'Utilisateur conserve la propriété des Contenus qu'il publie sur le Service. Toutefois, en utilisant le Service, l'Utilisateur accorde à TimeManager une licence non exclusive d'utilisation de ces Contenus dans le cadre de la fourniture du Service.</p>
+          </section>
+
+          <section id="responsabilite" class="legal-section">
+            <h2>Article 9 - Responsabilité</h2>
+            <p>TimeManager s'engage à fournir le Service avec diligence et selon les règles de l'art. Toutefois, TimeManager ne peut être tenu responsable :</p>
+            <ul>
+              <li>Des interruptions temporaires du Service pour maintenance ou mise à jour</li>
+              <li>Des dommages résultant de l'utilisation ou de l'impossibilité d'utiliser le Service</li>
+              <li>Des pertes de données résultant d'une défaillance technique</li>
+              <li>Des contenus publiés par les Utilisateurs</li>
+              <li>Des actes de tiers ou de cas de force majeure</li>
+            </ul>
+            <p>La responsabilité de TimeManager est limitée aux dommages directs et prévisibles résultant d'un manquement prouvé à ses obligations.</p>
+          </section>
+
+          <section id="modification" class="legal-section">
+            <h2>Article 10 - Modification des CGU</h2>
+            <p>TimeManager se réserve le droit de modifier les présentes CGU à tout moment. Les Utilisateurs seront informés de toute modification par email ou via une notification sur le Service.</p>
+            <p>La poursuite de l'utilisation du Service après notification des modifications vaut acceptation des nouvelles CGU.</p>
+          </section>
+
+          <section id="resiliation" class="legal-section">
+            <h2>Article 11 - Résiliation</h2>
+            <p>L'Utilisateur peut résilier son compte à tout moment via les paramètres de son compte ou en contactant le support.</p>
+            <p>TimeManager peut suspendre ou résilier l'accès d'un Utilisateur au Service en cas de :</p>
+            <ul>
+              <li>Non-respect des présentes CGU</li>
+              <li>Utilisation frauduleuse du Service</li>
+              <li>Demande de l'administrateur de l'organisation de l'Utilisateur</li>
+              <li>Inactivité prolongée du compte</li>
+            </ul>
+          </section>
+
+          <section id="droit" class="legal-section">
+            <h2>Article 12 - Droit applicable et juridiction compétente</h2>
+            <p>Les présentes CGU sont régies par le droit français.</p>
+            <p>En cas de litige relatif à l'interprétation ou à l'exécution des présentes CGU, les parties s'efforceront de trouver une solution amiable. À défaut, le litige sera soumis aux tribunaux compétents de Paris.</p>
+          </section>
+
+          <!-- Navigation vers autres pages légales -->
+          <div class="card mt-4">
+            <div class="card-body">
+              <h4>📄 Autres documents légaux</h4>
+              <div class="flex gap-2 mt-2">
+                <a href="legal.html" class="btn btn-secondary">📜 Mentions Légales</a>
+                <a href="privacy.html" class="btn btn-secondary">🔒 Politique de Confidentialité</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../js/theme-switcher.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

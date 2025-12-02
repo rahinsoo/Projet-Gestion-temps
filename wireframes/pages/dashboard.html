@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Tableau de bord - Outil de Gestion de Temps de Travail">
+  <title>Tableau de bord - TimeManager</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/themes.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+</head>
+<body data-role="employee">
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="../assets/logo.svg" alt="TimeManager" class="sidebar-logo">
+        <span class="sidebar-title">TimeManager</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Principal</div>
+          <a href="dashboard.html" class="nav-item active">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+          <a href="calendar.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Calendrier</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Gestion</div>
+          <a href="clients.html" class="nav-item">
+            <span class="nav-icon">👥</span>
+            <span class="nav-label">Clients</span>
+          </a>
+          <a href="projects.html" class="nav-item">
+            <span class="nav-icon">📁</span>
+            <span class="nav-label">Projets</span>
+          </a>
+          <a href="tasks.html" class="nav-item">
+            <span class="nav-icon">✅</span>
+            <span class="nav-label">Tâches</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Compte</div>
+          <a href="profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profil</span>
+          </a>
+          <a href="settings.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Paramètres</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="nav-item">
+          <span class="nav-icon">🚪</span>
+          <span class="nav-label">Déconnexion</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Overlay pour mobile -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+          <div class="topbar-search">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="Rechercher...">
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+            <span class="notification-badge">3</span>
+          </button>
+
+          <div class="dropdown">
+            <div class="user-menu dropdown-trigger">
+              <div class="user-avatar">JD</div>
+              <div class="user-info">
+                <span class="user-name">Jean Dupont</span>
+                <span class="user-role role-display">Employé</span>
+              </div>
+            </div>
+            <div class="dropdown-menu">
+              <a href="profile.html" class="dropdown-item">👤 Mon profil</a>
+              <a href="settings.html" class="dropdown-item">⚙️ Paramètres</a>
+              <div class="dropdown-divider"></div>
+              <a href="login.html" class="dropdown-item">🚪 Déconnexion</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Contenu de la page -->
+      <div class="page-content">
+        <!-- En-tête de page -->
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Tableau de bord</h1>
+            <nav class="breadcrumb">
+              <span class="breadcrumb-item"><a href="../index.html">Accueil</a></span>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-item active">Tableau de bord</span>
+            </nav>
+          </div>
+          <div class="page-actions">
+            <!-- Sélecteur de rôle pour démo -->
+            <select class="form-control" data-role-selector style="width: auto;">
+              <option value="employee">Vue Employé</option>
+              <option value="manager">Vue Responsable</option>
+              <option value="admin">Vue Admin</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Alerte pour Admin/Manager -->
+        <div class="alert alert-info mb-3" style="display: none;" data-show-for="admin,manager">
+          <span class="alert-icon">ℹ️</span>
+          <div class="alert-content">
+            <strong>Mode Responsable/Admin</strong> - Vous avez accès aux fonctionnalités de gestion d'équipe.
+          </div>
+        </div>
+
+        <!-- Statistiques -->
+        <div class="grid grid-cols-4 mb-4">
+          <!-- Heures travaillées -->
+          <div class="card">
+            <div class="card-body">
+              <div class="stat-card">
+                <div class="stat-icon primary">⏱️</div>
+                <div class="stat-content">
+                  <div class="stat-value">156h</div>
+                  <div class="stat-label">Heures ce mois</div>
+                  <div class="stat-change positive">+12% vs mois dernier</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projets actifs -->
+          <div class="card">
+            <div class="card-body">
+              <div class="stat-card">
+                <div class="stat-icon success">📁</div>
+                <div class="stat-content">
+                  <div class="stat-value">8</div>
+                  <div class="stat-label">Projets actifs</div>
+                  <div class="stat-change positive">+2 nouveaux</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tâches en cours -->
+          <div class="card">
+            <div class="card-body">
+              <div class="stat-card">
+                <div class="stat-icon warning">✅</div>
+                <div class="stat-content">
+                  <div class="stat-value">24</div>
+                  <div class="stat-label">Tâches en cours</div>
+                  <div class="stat-change negative">5 en retard</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clients (Admin/Manager only) -->
+          <div class="card">
+            <div class="card-body">
+              <div class="stat-card">
+                <div class="stat-icon danger">👥</div>
+                <div class="stat-content">
+                  <div class="stat-value">12</div>
+                  <div class="stat-label">Clients actifs</div>
+                  <div class="stat-change positive">+1 nouveau</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Graphiques et Calendrier -->
+        <div class="grid grid-cols-2 mb-4">
+          <!-- Graphique des heures -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Heures travaillées</h3>
+              <select class="form-control" style="width: auto; padding: 0.25rem 0.5rem; font-size: 0.875rem;">
+                <option>Cette semaine</option>
+                <option>Ce mois</option>
+                <option>Cette année</option>
+              </select>
+            </div>
+            <div class="card-body">
+              <div class="chart-placeholder">
+                <span class="chart-placeholder-icon">📈</span>
+                <span>Graphique des heures (Chart.js)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Répartition par projet -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Répartition par projet</h3>
+            </div>
+            <div class="card-body">
+              <div class="chart-placeholder">
+                <span class="chart-placeholder-icon">🥧</span>
+                <span>Graphique circulaire (Chart.js)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calendrier et Activités -->
+        <div class="grid grid-cols-2">
+          <!-- Mini Calendrier -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Décembre 2024</h3>
+              <div class="calendar-nav">
+                <button class="btn btn-icon btn-secondary btn-sm calendar-prev">‹</button>
+                <button class="btn btn-icon btn-secondary btn-sm calendar-next">›</button>
+              </div>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <div class="calendar-weekdays">
+                <div class="calendar-weekday">Lun</div>
+                <div class="calendar-weekday">Mar</div>
+                <div class="calendar-weekday">Mer</div>
+                <div class="calendar-weekday">Jeu</div>
+                <div class="calendar-weekday">Ven</div>
+                <div class="calendar-weekday">Sam</div>
+                <div class="calendar-weekday">Dim</div>
+              </div>
+              <div class="calendar-days" style="font-size: 0.875rem;">
+                <!-- Semaine 1 -->
+                <div class="calendar-day other-month"><span class="day-number">25</span></div>
+                <div class="calendar-day other-month"><span class="day-number">26</span></div>
+                <div class="calendar-day other-month"><span class="day-number">27</span></div>
+                <div class="calendar-day other-month"><span class="day-number">28</span></div>
+                <div class="calendar-day other-month"><span class="day-number">29</span></div>
+                <div class="calendar-day other-month"><span class="day-number">30</span></div>
+                <div class="calendar-day"><span class="day-number">1</span></div>
+                <!-- Semaine 2 -->
+                <div class="calendar-day today has-events">
+                  <span class="day-number">2</span>
+                  <div class="calendar-event project">Réunion</div>
+                </div>
+                <div class="calendar-day"><span class="day-number">3</span></div>
+                <div class="calendar-day has-events">
+                  <span class="day-number">4</span>
+                  <div class="calendar-event task">Sprint</div>
+                </div>
+                <div class="calendar-day"><span class="day-number">5</span></div>
+                <div class="calendar-day"><span class="day-number">6</span></div>
+                <div class="calendar-day"><span class="day-number">7</span></div>
+                <div class="calendar-day"><span class="day-number">8</span></div>
+                <!-- Semaine 3 -->
+                <div class="calendar-day"><span class="day-number">9</span></div>
+                <div class="calendar-day has-events">
+                  <span class="day-number">10</span>
+                  <div class="calendar-event project">Livraison</div>
+                </div>
+                <div class="calendar-day"><span class="day-number">11</span></div>
+                <div class="calendar-day"><span class="day-number">12</span></div>
+                <div class="calendar-day"><span class="day-number">13</span></div>
+                <div class="calendar-day"><span class="day-number">14</span></div>
+                <div class="calendar-day"><span class="day-number">15</span></div>
+                <!-- Semaine 4 -->
+                <div class="calendar-day"><span class="day-number">16</span></div>
+                <div class="calendar-day"><span class="day-number">17</span></div>
+                <div class="calendar-day"><span class="day-number">18</span></div>
+                <div class="calendar-day"><span class="day-number">19</span></div>
+                <div class="calendar-day"><span class="day-number">20</span></div>
+                <div class="calendar-day"><span class="day-number">21</span></div>
+                <div class="calendar-day"><span class="day-number">22</span></div>
+                <!-- Semaine 5 -->
+                <div class="calendar-day"><span class="day-number">23</span></div>
+                <div class="calendar-day"><span class="day-number">24</span></div>
+                <div class="calendar-day"><span class="day-number">25</span></div>
+                <div class="calendar-day"><span class="day-number">26</span></div>
+                <div class="calendar-day"><span class="day-number">27</span></div>
+                <div class="calendar-day"><span class="day-number">28</span></div>
+                <div class="calendar-day"><span class="day-number">29</span></div>
+                <!-- Semaine 6 -->
+                <div class="calendar-day"><span class="day-number">30</span></div>
+                <div class="calendar-day"><span class="day-number">31</span></div>
+                <div class="calendar-day other-month"><span class="day-number">1</span></div>
+                <div class="calendar-day other-month"><span class="day-number">2</span></div>
+                <div class="calendar-day other-month"><span class="day-number">3</span></div>
+                <div class="calendar-day other-month"><span class="day-number">4</span></div>
+                <div class="calendar-day other-month"><span class="day-number">5</span></div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="calendar.html" class="btn btn-secondary btn-sm">Voir le calendrier complet</a>
+            </div>
+          </div>
+
+          <!-- Activités récentes -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Activités récentes</h3>
+              <a href="#" class="btn btn-sm btn-secondary">Voir tout</a>
+            </div>
+            <div class="card-body" style="padding: 0 1.5rem;">
+              <ul class="activity-list">
+                <li class="activity-item">
+                  <div class="activity-icon stat-icon primary">✏️</div>
+                  <div class="activity-content">
+                    <p class="activity-title">Vous avez ajouté 4h sur <strong>Projet Alpha</strong></p>
+                    <span class="activity-time">Il y a 30 minutes</span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-icon stat-icon success">✅</div>
+                  <div class="activity-content">
+                    <p class="activity-title">Tâche <strong>Design mockups</strong> terminée</p>
+                    <span class="activity-time">Il y a 2 heures</span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-icon stat-icon warning">💬</div>
+                  <div class="activity-content">
+                    <p class="activity-title">Nouveau commentaire sur <strong>Sprint Review</strong></p>
+                    <span class="activity-time">Il y a 4 heures</span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-icon stat-icon danger">📧</div>
+                  <div class="activity-content">
+                    <p class="activity-title">Rappel : Réunion d'équipe demain à 10h</p>
+                    <span class="activity-time">Hier</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Admin/Manager : Équipe -->
+        <div class="mt-4" id="team-section" style="display: none;">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">👥 Mon équipe</h3>
+              <span class="badge badge-primary">Admin/Manager uniquement</span>
+            </div>
+            <div class="card-body">
+              <div class="table-container">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Membre</th>
+                      <th>Rôle</th>
+                      <th>Heures ce mois</th>
+                      <th>Projets</th>
+                      <th>Statut</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Membre">
+                        <div class="flex items-center gap-1">
+                          <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.75rem;">MR</div>
+                          <span>Marie Richard</span>
+                        </div>
+                      </td>
+                      <td data-label="Rôle">Développeur</td>
+                      <td data-label="Heures">142h</td>
+                      <td data-label="Projets">4</td>
+                      <td data-label="Statut"><span class="status"><span class="status-dot active"></span> En ligne</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Membre">
+                        <div class="flex items-center gap-1">
+                          <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.75rem;">PL</div>
+                          <span>Pierre Leroy</span>
+                        </div>
+                      </td>
+                      <td data-label="Rôle">Designer</td>
+                      <td data-label="Heures">138h</td>
+                      <td data-label="Projets">3</td>
+                      <td data-label="Statut"><span class="status"><span class="status-dot inactive"></span> Hors ligne</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Membre">
+                        <div class="flex items-center gap-1">
+                          <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.75rem;">SM</div>
+                          <span>Sophie Martin</span>
+                        </div>
+                      </td>
+                      <td data-label="Rôle">Chef de projet</td>
+                      <td data-label="Heures">160h</td>
+                      <td data-label="Projets">6</td>
+                      <td data-label="Statut"><span class="status"><span class="status-dot active"></span> En ligne</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../js/theme-switcher.js"></script>
+  <script src="../js/main.js"></script>
+  
+  <script>
+    // Gestion de l'affichage selon le rôle
+    function updateDashboardForRole() {
+      const role = document.body.getAttribute('data-role');
+      const teamSection = document.getElementById('team-section');
+      const roleAlerts = document.querySelectorAll('[data-show-for]');
+      
+      // Afficher la section équipe pour admin/manager
+      if (role === 'admin' || role === 'manager') {
+        if (teamSection) teamSection.style.display = 'block';
+      } else {
+        if (teamSection) teamSection.style.display = 'none';
+      }
+
+      // Mettre à jour les alertes
+      roleAlerts.forEach(function(alert) {
+        const roles = alert.getAttribute('data-show-for').split(',');
+        alert.style.display = roles.includes(role) ? 'flex' : 'none';
+      });
+    }
+
+    // Observer les changements de rôle
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'data-role') {
+          updateDashboardForRole();
+        }
+      });
+    });
+
+    observer.observe(document.body, { attributes: true });
+    
+    // Initialiser
+    document.addEventListener('DOMContentLoaded', updateDashboardForRole);
+  </script>
+</body>
+</html>

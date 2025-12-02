@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Calendrier Global - Outil de Gestion de Temps de Travail">
+  <title>Calendrier - TimeManager</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/themes.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+</head>
+<body data-role="employee">
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="../assets/logo.svg" alt="TimeManager" class="sidebar-logo">
+        <span class="sidebar-title">TimeManager</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Principal</div>
+          <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+          <a href="calendar.html" class="nav-item active">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Calendrier</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Gestion</div>
+          <a href="clients.html" class="nav-item">
+            <span class="nav-icon">👥</span>
+            <span class="nav-label">Clients</span>
+          </a>
+          <a href="projects.html" class="nav-item">
+            <span class="nav-icon">📁</span>
+            <span class="nav-label">Projets</span>
+          </a>
+          <a href="tasks.html" class="nav-item">
+            <span class="nav-icon">✅</span>
+            <span class="nav-label">Tâches</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Compte</div>
+          <a href="profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profil</span>
+          </a>
+          <a href="settings.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Paramètres</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="nav-item">
+          <span class="nav-icon">🚪</span>
+          <span class="nav-label">Déconnexion</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Overlay pour mobile -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+          <div class="topbar-search">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="Rechercher...">
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+            <span class="notification-badge">3</span>
+          </button>
+
+          <div class="dropdown">
+            <div class="user-menu dropdown-trigger">
+              <div class="user-avatar">JD</div>
+              <div class="user-info">
+                <span class="user-name">Jean Dupont</span>
+                <span class="user-role role-display">Employé</span>
+              </div>
+            </div>
+            <div class="dropdown-menu">
+              <a href="profile.html" class="dropdown-item">👤 Mon profil</a>
+              <a href="settings.html" class="dropdown-item">⚙️ Paramètres</a>
+              <div class="dropdown-divider"></div>
+              <a href="login.html" class="dropdown-item">🚪 Déconnexion</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Contenu de la page -->
+      <div class="page-content">
+        <!-- En-tête de page -->
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Calendrier Global</h1>
+            <nav class="breadcrumb">
+              <span class="breadcrumb-item"><a href="../index.html">Accueil</a></span>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-item active">Calendrier</span>
+            </nav>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary" data-modal-open="modal-add-time">
+              <span>+</span> Saisir du temps
+            </button>
+          </div>
+        </div>
+
+        <!-- Contrôles du calendrier -->
+        <div class="filters-bar">
+          <div class="filter-group">
+            <div class="calendar-views">
+              <button class="calendar-view-btn" data-view="day">Jour</button>
+              <button class="calendar-view-btn" data-view="week">Semaine</button>
+              <button class="calendar-view-btn active" data-view="month">Mois</button>
+            </div>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Afficher :</label>
+            <div class="flex gap-1">
+              <label class="form-check" style="margin: 0;">
+                <input type="checkbox" class="form-check-input" checked> Projets
+              </label>
+              <label class="form-check" style="margin: 0;">
+                <input type="checkbox" class="form-check-input" checked> Tâches
+              </label>
+              <label class="form-check" style="margin: 0;">
+                <input type="checkbox" class="form-check-input" checked> Temps saisi
+              </label>
+            </div>
+          </div>
+          <div class="filter-group" style="margin-left: auto;">
+            <button class="btn btn-secondary btn-sm">📤 Exporter</button>
+          </div>
+        </div>
+
+        <!-- Calendrier -->
+        <div class="card">
+          <div class="card-header">
+            <div class="flex items-center gap-2">
+              <button class="btn btn-icon btn-secondary btn-sm calendar-prev">‹</button>
+              <h3 class="card-title calendar-month-title" style="min-width: 180px; text-align: center;">Décembre 2024</h3>
+              <button class="btn btn-icon btn-secondary btn-sm calendar-next">›</button>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="btn btn-secondary btn-sm">Aujourd'hui</button>
+            </div>
+          </div>
+          <div class="card-body" style="padding: 0;">
+            <div class="calendar-weekdays">
+              <div class="calendar-weekday">Lundi</div>
+              <div class="calendar-weekday">Mardi</div>
+              <div class="calendar-weekday">Mercredi</div>
+              <div class="calendar-weekday">Jeudi</div>
+              <div class="calendar-weekday">Vendredi</div>
+              <div class="calendar-weekday">Samedi</div>
+              <div class="calendar-weekday">Dimanche</div>
+            </div>
+            <div class="calendar-days" id="calendar-month-view">
+              <!-- Semaine 1 -->
+              <div class="calendar-day other-month"><span class="day-number">25</span></div>
+              <div class="calendar-day other-month"><span class="day-number">26</span></div>
+              <div class="calendar-day other-month"><span class="day-number">27</span></div>
+              <div class="calendar-day other-month"><span class="day-number">28</span></div>
+              <div class="calendar-day other-month"><span class="day-number">29</span></div>
+              <div class="calendar-day other-month"><span class="day-number">30</span></div>
+              <div class="calendar-day has-events">
+                <span class="day-number">1</span>
+                <div class="calendar-event project" style="background-color: rgba(74, 144, 226, 0.2);">📁 Projet Alpha</div>
+                <div class="calendar-event" style="background-color: rgba(40, 167, 69, 0.2); color: var(--success);">⏱️ 6h travaillées</div>
+              </div>
+              
+              <!-- Semaine 2 -->
+              <div class="calendar-day today has-events">
+                <span class="day-number">2</span>
+                <div class="calendar-event project" style="background-color: rgba(74, 144, 226, 0.2);">📁 Projet Alpha</div>
+                <div class="calendar-event task" style="background-color: rgba(40, 167, 69, 0.2);">✅ Dev frontend</div>
+                <div class="calendar-event" style="background-color: rgba(123, 104, 238, 0.2); color: #7B68EE;">📅 Réunion 10h</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">3</span>
+                <div class="calendar-event project" style="background-color: rgba(74, 144, 226, 0.2);">📁 Projet Alpha</div>
+                <div class="calendar-event task">✅ Dev frontend</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">4</span>
+                <div class="calendar-event project" style="background-color: rgba(74, 144, 226, 0.2);">📁 Projet Alpha</div>
+                <div class="calendar-event task" style="background-color: rgba(40, 167, 69, 0.2);">✅ Config serveur</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">5</span>
+                <div class="calendar-event project" style="background-color: rgba(74, 144, 226, 0.2);">📁 Projet Alpha</div>
+                <div class="calendar-event task">✅ Maquettes UI</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">6</span>
+                <div class="calendar-event project" style="background-color: rgba(255, 193, 7, 0.2); color: #856404;">📁 Refonte Site</div>
+              </div>
+              <div class="calendar-day"><span class="day-number">7</span></div>
+              <div class="calendar-day has-events">
+                <span class="day-number">8</span>
+                <div class="calendar-event task" style="background-color: rgba(40, 167, 69, 0.2);">✅ Doc API</div>
+              </div>
+              
+              <!-- Semaine 3 -->
+              <div class="calendar-day has-events">
+                <span class="day-number">9</span>
+                <div class="calendar-event project" style="background-color: rgba(255, 193, 7, 0.2); color: #856404;">📁 Refonte Site</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">10</span>
+                <div class="calendar-event project" style="background-color: rgba(255, 193, 7, 0.2); color: #856404;">📁 Refonte Site</div>
+                <div class="calendar-event task" style="background-color: rgba(255, 193, 7, 0.2);">✅ Audit SEO</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">11</span>
+                <div class="calendar-event project" style="background-color: rgba(220, 53, 69, 0.2); color: var(--danger);">📁 App Mobile</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">12</span>
+                <div class="calendar-event project" style="background-color: rgba(220, 53, 69, 0.2); color: var(--danger);">📁 App Mobile</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">13</span>
+                <div class="calendar-event project" style="background-color: rgba(220, 53, 69, 0.2); color: var(--danger);">📁 App Mobile</div>
+                <div class="calendar-event" style="background-color: rgba(123, 104, 238, 0.2); color: #7B68EE;">📅 Sprint Review</div>
+              </div>
+              <div class="calendar-day"><span class="day-number">14</span></div>
+              <div class="calendar-day"><span class="day-number">15</span></div>
+              
+              <!-- Semaine 4 -->
+              <div class="calendar-day has-events">
+                <span class="day-number">16</span>
+                <div class="calendar-event project" style="background-color: rgba(40, 167, 69, 0.2); color: var(--success);">📁 Projet Beta</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">17</span>
+                <div class="calendar-event project" style="background-color: rgba(40, 167, 69, 0.2); color: var(--success);">📁 Projet Beta</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">18</span>
+                <div class="calendar-event project" style="background-color: rgba(40, 167, 69, 0.2); color: var(--success);">📁 Projet Beta</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">19</span>
+                <div class="calendar-event project" style="background-color: rgba(40, 167, 69, 0.2); color: var(--success);">📁 Projet Beta</div>
+              </div>
+              <div class="calendar-day has-events">
+                <span class="day-number">20</span>
+                <div class="calendar-event project" style="background-color: rgba(40, 167, 69, 0.2); color: var(--success);">📁 Projet Beta</div>
+                <div class="calendar-event" style="background-color: rgba(123, 104, 238, 0.2); color: #7B68EE;">📅 Démo client</div>
+              </div>
+              <div class="calendar-day"><span class="day-number">21</span></div>
+              <div class="calendar-day"><span class="day-number">22</span></div>
+              
+              <!-- Semaine 5 -->
+              <div class="calendar-day"><span class="day-number">23</span></div>
+              <div class="calendar-day"><span class="day-number">24</span></div>
+              <div class="calendar-day" style="background-color: rgba(255, 193, 7, 0.05);"><span class="day-number">25</span><span class="text-xs text-muted">🎄 Noël</span></div>
+              <div class="calendar-day"><span class="day-number">26</span></div>
+              <div class="calendar-day"><span class="day-number">27</span></div>
+              <div class="calendar-day"><span class="day-number">28</span></div>
+              <div class="calendar-day"><span class="day-number">29</span></div>
+              
+              <!-- Semaine 6 -->
+              <div class="calendar-day"><span class="day-number">30</span></div>
+              <div class="calendar-day"><span class="day-number">31</span></div>
+              <div class="calendar-day other-month"><span class="day-number">1</span></div>
+              <div class="calendar-day other-month"><span class="day-number">2</span></div>
+              <div class="calendar-day other-month"><span class="day-number">3</span></div>
+              <div class="calendar-day other-month"><span class="day-number">4</span></div>
+              <div class="calendar-day other-month"><span class="day-number">5</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Légende et résumé -->
+        <div class="grid grid-cols-2 mt-3">
+          <!-- Légende -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Légende</h3>
+            </div>
+            <div class="card-body">
+              <div class="flex flex-wrap gap-2">
+                <span class="badge" style="background-color: rgba(74, 144, 226, 0.2); color: var(--accent);">📁 Projet</span>
+                <span class="badge" style="background-color: rgba(40, 167, 69, 0.2); color: var(--success);">✅ Tâche</span>
+                <span class="badge" style="background-color: rgba(123, 104, 238, 0.2); color: #7B68EE;">📅 Événement</span>
+                <span class="badge" style="background-color: rgba(255, 193, 7, 0.2); color: #856404;">⏱️ Temps saisi</span>
+              </div>
+              <hr style="margin: 1rem 0; border-color: var(--border);">
+              <p class="text-sm text-muted">💡 Cliquez sur une journée pour saisir du temps ou ajouter un événement. Glissez-déposez les éléments pour les réorganiser.</p>
+            </div>
+          </div>
+
+          <!-- Résumé de la semaine -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Résumé de la semaine</h3>
+            </div>
+            <div class="card-body">
+              <div class="grid grid-cols-2" style="gap: 1rem;">
+                <div>
+                  <p class="text-sm text-muted">Heures travaillées</p>
+                  <p class="stat-value" style="font-size: 1.5rem;">32h</p>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Objectif hebdomadaire</p>
+                  <p class="stat-value" style="font-size: 1.5rem;">35h</p>
+                </div>
+              </div>
+              <div style="background: var(--bg-secondary); border-radius: 4px; height: 8px; margin-top: 1rem;">
+                <div style="background: var(--accent); height: 100%; width: 91%; border-radius: 4px;"></div>
+              </div>
+              <p class="text-sm text-muted mt-1">91% de l'objectif atteint</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal Saisir du temps -->
+  <div class="modal-overlay" id="modal-add-time">
+    <div class="modal" style="max-width: 500px;">
+      <div class="modal-header">
+        <h2 class="modal-title">Saisir du temps</h2>
+        <button class="modal-close" data-modal-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <form data-validate id="form-time">
+          <div class="form-group">
+            <label for="time-date" class="form-label required">Date</label>
+            <input type="date" id="time-date" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="time-project" class="form-label required">Projet</label>
+            <select id="time-project" class="form-control" required>
+              <option value="">Sélectionner un projet...</option>
+              <option value="1">Projet Alpha - TechCorp SA</option>
+              <option value="2">Projet Beta - FinanceStart</option>
+              <option value="3">Refonte Site Web - RetailMax</option>
+              <option value="4">Application Mobile - HealthPlus</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="time-task" class="form-label">Tâche (optionnel)</label>
+            <select id="time-task" class="form-control">
+              <option value="">Aucune tâche spécifique</option>
+              <option value="1">Développement frontend</option>
+              <option value="2">Créer les maquettes UI</option>
+              <option value="3">Configuration serveur</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-2" style="gap: 1rem;">
+            <div class="form-group">
+              <label for="time-start" class="form-label required">Heure de début</label>
+              <input type="time" id="time-start" class="form-control" value="09:00" required>
+            </div>
+            <div class="form-group">
+              <label for="time-end" class="form-label required">Heure de fin</label>
+              <input type="time" id="time-end" class="form-control" value="17:00" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="time-break" class="form-label">Pause (minutes)</label>
+            <input type="number" id="time-break" class="form-control" value="60" min="0" step="15">
+          </div>
+
+          <div class="form-group">
+            <label for="time-description" class="form-label">Description</label>
+            <textarea id="time-description" class="form-control" rows="2" placeholder="Décrivez le travail effectué..."></textarea>
+          </div>
+
+          <div class="alert alert-info" style="margin-top: 1rem;">
+            <span class="alert-icon">ℹ️</span>
+            <div class="alert-content">
+              <strong>Temps calculé :</strong> 7h00 (après déduction de la pause)
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-modal-close>Annuler</button>
+        <button type="submit" form="form-time" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../js/theme-switcher.js"></script>
+  <script src="../js/main.js"></script>
+  
+  <script>
+    // Changement de vue du calendrier
+    document.querySelectorAll('.calendar-view-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.calendar-view-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        const view = this.getAttribute('data-view');
+        window.TimeManager.showNotification(`Vue "${view}" sélectionnée`, 'info');
+      });
+    });
+
+    // Pré-remplir la date d'aujourd'hui
+    document.getElementById('time-date').valueAsDate = new Date();
+  </script>
+</body>
+</html>
