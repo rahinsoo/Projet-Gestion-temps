@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 1024" width="768" height="1024">
+  <!-- Tablet Legal Wireframe -->
+  <title>Legal - Tablet Wireframe</title>
+  
+  <!-- Background -->
+  <rect width="768" height="1024" fill="#f5f5f5"/>
+  
+  <!-- Header -->
+  <rect width="768" height="70" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <rect x="30" y="15" width="140" height="40" rx="8" fill="#4A90E2"/>
+  <text x="100" y="42" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#ffffff">TimeManager</text>
+  
+  <text x="20" y="42" font-family="system-ui" font-size="18">☰</text>
+  
+  <rect x="630" y="15" width="100" height="40" rx="8" fill="#4A90E2"/>
+  <text x="680" y="42" text-anchor="middle" font-family="system-ui" font-size="13" fill="#ffffff">Connexion</text>
+  
+  <!-- Main Content -->
+  <rect x="50" y="100" width="668" height="850" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Title -->
+  <text x="384" y="160" text-anchor="middle" font-family="system-ui" font-size="28" font-weight="bold" fill="#333">Mentions Légales</text>
+  <text x="384" y="190" text-anchor="middle" font-family="system-ui" font-size="12" fill="#666">Dernière mise à jour : 1er décembre 2024</text>
+  
+  <!-- Content Sections -->
+  <text x="100" y="250" font-family="system-ui" font-size="18" font-weight="600" fill="#333">1. Éditeur du site</text>
+  <text x="100" y="280" font-family="system-ui" font-size="13" fill="#666">TimeManager SAS</text>
+  <text x="100" y="305" font-family="system-ui" font-size="13" fill="#666">123 Avenue des Entrepreneurs, 75001 Paris, France</text>
+  <text x="100" y="330" font-family="system-ui" font-size="13" fill="#666">SIRET : 123 456 789 00012 | RCS Paris B 123 456 789</text>
+  <text x="100" y="355" font-family="system-ui" font-size="13" fill="#666">Capital social : 10 000 €</text>
+  
+  <text x="100" y="410" font-family="system-ui" font-size="18" font-weight="600" fill="#333">2. Directeur de la publication</text>
+  <text x="100" y="440" font-family="system-ui" font-size="13" fill="#666">M. Jean Dupont, Président de TimeManager SAS</text>
+  <text x="100" y="465" font-family="system-ui" font-size="13" fill="#666">Email : contact@timemanager.fr</text>
+  
+  <text x="100" y="520" font-family="system-ui" font-size="18" font-weight="600" fill="#333">3. Hébergement</text>
+  <text x="100" y="550" font-family="system-ui" font-size="13" fill="#666">CloudProvider SA</text>
+  <text x="100" y="575" font-family="system-ui" font-size="13" fill="#666">456 Tech Street, 1000 Brussels, Belgium</text>
+  <text x="100" y="600" font-family="system-ui" font-size="13" fill="#666">Téléphone : +32 2 123 45 67</text>
+  
+  <text x="100" y="655" font-family="system-ui" font-size="18" font-weight="600" fill="#333">4. Propriété intellectuelle</text>
+  <text x="100" y="685" font-family="system-ui" font-size="13" fill="#666">L'ensemble des contenus présents sur ce site est</text>
+  <text x="100" y="710" font-family="system-ui" font-size="13" fill="#666">protégé par le droit d'auteur. Toute reproduction,</text>
+  <text x="100" y="735" font-family="system-ui" font-size="13" fill="#666">même partielle, est soumise à autorisation préalable.</text>
+  
+  <!-- Quick Links -->
+  <rect x="100" y="780" width="550" height="130" rx="8" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="130" y="815" font-family="system-ui" font-size="15" font-weight="600" fill="#333">Liens rapides</text>
+  
+  <text x="130" y="850" font-family="system-ui" font-size="13" fill="#4A90E2">→ CGU</text>
+  <text x="250" y="850" font-family="system-ui" font-size="13" fill="#4A90E2">→ Confidentialité</text>
+  <text x="400" y="850" font-family="system-ui" font-size="13" fill="#4A90E2">→ Cookies</text>
+  <text x="130" y="885" font-family="system-ui" font-size="13" fill="#4A90E2">→ Contact</text>
+  
+  <!-- Footer -->
+  <rect y="970" width="768" height="54" fill="#333"/>
+  <text x="100" y="1005" font-family="system-ui" font-size="11" fill="#999">© 2024 TimeManager</text>
+  <text x="550" y="1005" font-family="system-ui" font-size="11" fill="#999">contact@timemanager.fr</text>
+</svg>

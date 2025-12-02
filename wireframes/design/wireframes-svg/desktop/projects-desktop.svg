@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900">
+  <!-- Desktop Projects Wireframe -->
+  <title>Projects - Desktop Wireframe</title>
+  
+  <!-- Background -->
+  <rect width="1440" height="900" fill="#f5f5f5"/>
+  
+  <!-- Sidebar -->
+  <rect width="260" height="900" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Logo -->
+  <rect x="20" y="20" width="220" height="50" rx="8" fill="#4A90E2"/>
+  <text x="130" y="52" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="bold" fill="#ffffff">TimeManager</text>
+  
+  <!-- Menu Items -->
+  <rect x="15" y="100" width="230" height="40" rx="8" fill="#f5f5f5"/>
+  <text x="55" y="126" font-family="system-ui" font-size="14" fill="#333">📊 Tableau de bord</text>
+  
+  <rect x="15" y="150" width="230" height="40" rx="8" fill="#f5f5f5"/>
+  <text x="55" y="176" font-family="system-ui" font-size="14" fill="#333">👥 Clients</text>
+  
+  <rect x="15" y="200" width="230" height="40" rx="8" fill="#4A90E2"/>
+  <text x="55" y="226" font-family="system-ui" font-size="14" fill="#ffffff">📁 Projets</text>
+  
+  <rect x="15" y="250" width="230" height="40" rx="8" fill="#f5f5f5"/>
+  <text x="55" y="276" font-family="system-ui" font-size="14" fill="#333">✅ Tâches</text>
+  
+  <rect x="15" y="300" width="230" height="40" rx="8" fill="#f5f5f5"/>
+  <text x="55" y="326" font-family="system-ui" font-size="14" fill="#333">📅 Calendrier</text>
+  
+  <!-- Main Content -->
+  <rect x="260" y="0" width="1180" height="900" fill="#f5f5f5"/>
+  
+  <!-- Top Bar -->
+  <rect x="260" y="0" width="1180" height="70" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="290" y="42" font-family="system-ui" font-size="24" font-weight="bold" fill="#333">Gestion des Projets</text>
+  
+  <!-- Add Button -->
+  <rect x="1100" y="15" width="150" height="40" rx="8" fill="#4A90E2"/>
+  <text x="1175" y="42" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="500" fill="#ffffff">+ Nouveau Projet</text>
+  
+  <!-- User Menu -->
+  <circle cx="1320" cy="35" r="18" fill="#e0e0e0"/>
+  
+  <!-- View Toggle -->
+  <rect x="290" y="90" width="200" height="40" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <rect x="290" y="90" width="100" height="40" rx="8" fill="#4A90E2"/>
+  <text x="340" y="116" text-anchor="middle" font-family="system-ui" font-size="13" fill="#ffffff">Calendrier</text>
+  <text x="440" y="116" text-anchor="middle" font-family="system-ui" font-size="13" fill="#666">Liste</text>
+  
+  <!-- Calendar Header -->
+  <rect x="290" y="150" width="1120" height="50" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="320" y="182" font-family="system-ui" font-size="16">◀</text>
+  <text x="680" y="182" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="bold" fill="#333">Décembre 2024</text>
+  <text x="1050" y="182" font-family="system-ui" font-size="16">▶</text>
+  
+  <!-- Calendar Grid -->
+  <rect x="290" y="210" width="1120" height="580" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Week Header -->
+  <rect x="290" y="210" width="1120" height="40" fill="#f5f5f5"/>
+  <text x="370" y="236" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#666">LUN</text>
+  <text x="530" y="236" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#666">MAR</text>
+  <text x="690" y="236" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#666">MER</text>
+  <text x="850" y="236" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#666">JEU</text>
+  <text x="1010" y="236" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#666">VEN</text>
+  <text x="1170" y="236" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#666">SAM</text>
+  <text x="1330" y="236" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#666">DIM</text>
+  
+  <!-- Week 1 -->
+  <line x1="290" y1="350" x2="1410" y2="350" stroke="#e0e0e0"/>
+  <text x="370" y="280" text-anchor="middle" font-family="system-ui" font-size="14" fill="#999">25</text>
+  <text x="530" y="280" text-anchor="middle" font-family="system-ui" font-size="14" fill="#999">26</text>
+  <text x="690" y="280" text-anchor="middle" font-family="system-ui" font-size="14" fill="#999">27</text>
+  <text x="850" y="280" text-anchor="middle" font-family="system-ui" font-size="14" fill="#999">28</text>
+  <text x="1010" y="280" text-anchor="middle" font-family="system-ui" font-size="14" fill="#999">29</text>
+  <text x="1170" y="280" text-anchor="middle" font-family="system-ui" font-size="14" fill="#999">30</text>
+  <text x="1330" y="280" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">1</text>
+  
+  <!-- Project bars in calendar -->
+  <rect x="310" y="300" width="540" height="25" rx="4" fill="#4A90E2"/>
+  <text x="320" y="318" font-family="system-ui" font-size="11" fill="#ffffff">📁 Projet Alpha - Client A</text>
+  
+  <rect x="870" y="300" width="380" height="25" rx="4" fill="#28a745"/>
+  <text x="880" y="318" font-family="system-ui" font-size="11" fill="#ffffff">📁 Projet Beta - Client B</text>
+  
+  <!-- Week 2 -->
+  <line x1="290" y1="450" x2="1410" y2="450" stroke="#e0e0e0"/>
+  <text x="370" y="380" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">2</text>
+  <text x="530" y="380" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">3</text>
+  <text x="690" y="380" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">4</text>
+  <text x="850" y="380" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">5</text>
+  <text x="1010" y="380" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">6</text>
+  <text x="1170" y="380" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">7</text>
+  <text x="1330" y="380" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">8</text>
+  
+  <rect x="310" y="400" width="700" height="25" rx="4" fill="#4A90E2"/>
+  <text x="320" y="418" font-family="system-ui" font-size="11" fill="#ffffff">📁 Projet Alpha - Client A (suite)</text>
+  
+  <rect x="530" y="425" width="220" height="22" rx="4" fill="#ffc107"/>
+  <text x="540" y="441" font-family="system-ui" font-size="10" fill="#333">📁 Projet Gamma</text>
+  
+  <!-- Week 3 -->
+  <line x1="290" y1="550" x2="1410" y2="550" stroke="#e0e0e0"/>
+  <text x="370" y="480" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">9</text>
+  <text x="530" y="480" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">10</text>
+  <text x="690" y="480" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">11</text>
+  <text x="850" y="480" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">12</text>
+  <text x="1010" y="480" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">13</text>
+  <text x="1170" y="480" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">14</text>
+  <text x="1330" y="480" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">15</text>
+  
+  <rect x="690" y="500" width="480" height="25" rx="4" fill="#dc3545"/>
+  <text x="700" y="518" font-family="system-ui" font-size="11" fill="#ffffff">📁 Projet Urgent - Client C</text>
+  
+  <!-- Legend -->
+  <rect x="290" y="800" width="500" height="40" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="310" y="825" font-family="system-ui" font-size="12" fill="#666">Légende:</text>
+  <rect x="380" y="812" width="15" height="15" rx="2" fill="#4A90E2"/>
+  <text x="400" y="825" font-family="system-ui" font-size="11" fill="#666">En cours</text>
+  <rect x="470" y="812" width="15" height="15" rx="2" fill="#28a745"/>
+  <text x="490" y="825" font-family="system-ui" font-size="11" fill="#666">Terminé</text>
+  <rect x="560" y="812" width="15" height="15" rx="2" fill="#ffc107"/>
+  <text x="580" y="825" font-family="system-ui" font-size="11" fill="#666">En attente</text>
+  <rect x="660" y="812" width="15" height="15" rx="2" fill="#dc3545"/>
+  <text x="680" y="825" font-family="system-ui" font-size="11" fill="#666">Urgent</text>
+  
+  <!-- Annotation -->
+  <rect x="820" y="840" width="400" height="50" rx="8" fill="#fff9c4" stroke="#ffc107"/>
+  <text x="840" y="870" font-family="system-ui" font-size="12" fill="#856404">🖥️ Desktop Wireframe - 1440x900 | Vue calendrier des projets avec Gantt simplifié</text>
+</svg>
