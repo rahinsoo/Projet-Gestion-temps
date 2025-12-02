@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 1024" width="768" height="1024">
+  <!-- Tablet Privacy Wireframe -->
+  <title>Privacy - Tablet Wireframe</title>
+  
+  <!-- Background -->
+  <rect width="768" height="1024" fill="#f5f5f5"/>
+  
+  <!-- Header -->
+  <rect width="768" height="70" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <rect x="30" y="15" width="140" height="40" rx="8" fill="#4A90E2"/>
+  <text x="100" y="42" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#ffffff">TimeManager</text>
+  
+  <rect x="630" y="15" width="100" height="40" rx="8" fill="#4A90E2"/>
+  <text x="680" y="42" text-anchor="middle" font-family="system-ui" font-size="13" fill="#ffffff">Connexion</text>
+  
+  <!-- TOC Dropdown -->
+  <rect x="50" y="100" width="668" height="50" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="80" y="132" font-family="system-ui" font-size="14" fill="#333">📋 Table des matières</text>
+  <text x="680" y="132" font-family="system-ui" font-size="14" fill="#999">▼</text>
+  
+  <!-- Main Content -->
+  <rect x="50" y="170" width="668" height="780" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- RGPD Badge -->
+  <rect x="530" y="190" width="140" height="30" rx="6" fill="#28a745" opacity="0.1"/>
+  <text x="600" y="210" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="600" fill="#28a745">✓ Conforme RGPD</text>
+  
+  <!-- Title -->
+  <text x="384" y="240" text-anchor="middle" font-family="system-ui" font-size="26" font-weight="bold" fill="#333">Politique de</text>
+  <text x="384" y="270" text-anchor="middle" font-family="system-ui" font-size="26" font-weight="bold" fill="#333">Confidentialité</text>
+  <text x="384" y="300" text-anchor="middle" font-family="system-ui" font-size="12" fill="#666">Dernière mise à jour : 1er décembre 2024</text>
+  
+  <!-- Section 1 -->
+  <text x="100" y="360" font-family="system-ui" font-size="18" font-weight="600" fill="#333">1. Introduction</text>
+  <text x="100" y="395" font-family="system-ui" font-size="13" fill="#666">TimeManager SAS s'engage à protéger la vie privée</text>
+  <text x="100" y="418" font-family="system-ui" font-size="13" fill="#666">des utilisateurs de ses services. Cette politique explique</text>
+  <text x="100" y="441" font-family="system-ui" font-size="13" fill="#666">comment nous collectons et protégeons vos données.</text>
+  
+  <!-- Section 2 -->
+  <text x="100" y="495" font-family="system-ui" font-size="18" font-weight="600" fill="#333">2. Données collectées</text>
+  <text x="100" y="530" font-family="system-ui" font-size="13" fill="#666">Nous collectons les catégories de données suivantes :</text>
+  
+  <text x="115" y="560" font-family="system-ui" font-size="12" fill="#666">📧 <tspan font-weight="500">Données d'identification</tspan></text>
+  <text x="115" y="585" font-family="system-ui" font-size="12" fill="#666">🏢 <tspan font-weight="500">Données professionnelles</tspan></text>
+  <text x="115" y="610" font-family="system-ui" font-size="12" fill="#666">⏱️ <tspan font-weight="500">Données d'utilisation</tspan></text>
+  <text x="115" y="635" font-family="system-ui" font-size="12" fill="#666">💻 <tspan font-weight="500">Données techniques</tspan></text>
+  
+  <!-- Section 7 - Rights -->
+  <text x="100" y="690" font-family="system-ui" font-size="18" font-weight="600" fill="#333">7. Vos droits (RGPD)</text>
+  
+  <!-- Rights boxes - 2 rows -->
+  <rect x="100" y="720" width="130" height="55" rx="6" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="165" y="745" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="500" fill="#333">Accès</text>
+  <text x="165" y="762" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Art. 15</text>
+  
+  <rect x="240" y="720" width="130" height="55" rx="6" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="305" y="745" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="500" fill="#333">Rectification</text>
+  <text x="305" y="762" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Art. 16</text>
+  
+  <rect x="380" y="720" width="130" height="55" rx="6" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="445" y="745" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="500" fill="#333">Effacement</text>
+  <text x="445" y="762" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Art. 17</text>
+  
+  <rect x="520" y="720" width="130" height="55" rx="6" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="585" y="745" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="500" fill="#333">Portabilité</text>
+  <text x="585" y="762" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Art. 20</text>
+  
+  <rect x="100" y="785" width="130" height="55" rx="6" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="165" y="810" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="500" fill="#333">Opposition</text>
+  <text x="165" y="827" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Art. 21</text>
+  
+  <rect x="240" y="785" width="130" height="55" rx="6" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="305" y="810" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="500" fill="#333">Limitation</text>
+  <text x="305" y="827" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Art. 18</text>
+  
+  <!-- Contact DPO -->
+  <rect x="100" y="860" width="550" height="70" rx="8" fill="#e3f2fd"/>
+  <text x="130" y="890" font-family="system-ui" font-size="13" font-weight="500" fill="#333">📧 Contact DPO</text>
+  <text x="130" y="915" font-family="system-ui" font-size="12" fill="#666">dpo@timemanager.fr | +33 1 23 45 67 89</text>
+  
+  <!-- Footer -->
+  <rect y="970" width="768" height="54" fill="#333"/>
+  <text x="100" y="1005" font-family="system-ui" font-size="11" fill="#999">© 2024 TimeManager</text>
+  <text x="550" y="1005" font-family="system-ui" font-size="11" fill="#4A90E2">Confidentialité</text>
+</svg>

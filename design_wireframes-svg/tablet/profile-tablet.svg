@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 1024" width="768" height="1024">
+  <!-- Tablet Profile Wireframe -->
+  <title>Profile - Tablet Wireframe</title>
+  
+  <!-- Background -->
+  <rect width="768" height="1024" fill="#f5f5f5"/>
+  
+  <!-- Sidebar (collapsed) -->
+  <rect width="70" height="1024" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Icons -->
+  <rect x="15" y="20" width="40" height="40" rx="8" fill="#4A90E2"/>
+  <text x="25" y="45" font-family="system-ui" font-size="14" fill="#fff">TM</text>
+  
+  <circle cx="35" cy="100" r="15" fill="#f5f5f5"/>
+  <text x="28" y="105" font-family="system-ui" font-size="12">📊</text>
+  
+  <circle cx="35" cy="150" r="15" fill="#f5f5f5"/>
+  <text x="28" y="155" font-family="system-ui" font-size="12">👥</text>
+  
+  <circle cx="35" cy="200" r="15" fill="#f5f5f5"/>
+  <text x="28" y="205" font-family="system-ui" font-size="12">📁</text>
+  
+  <circle cx="35" cy="250" r="15" fill="#f5f5f5"/>
+  <text x="28" y="255" font-family="system-ui" font-size="12">✅</text>
+  
+  <circle cx="35" cy="300" r="15" fill="#f5f5f5"/>
+  <text x="28" y="305" font-family="system-ui" font-size="12">📅</text>
+  
+  <circle cx="35" cy="950" r="15" fill="#4A90E2"/>
+  <text x="28" y="955" font-family="system-ui" font-size="12">👤</text>
+  
+  <!-- Main Content -->
+  <rect x="70" y="0" width="698" height="1024" fill="#f5f5f5"/>
+  
+  <!-- Top Bar -->
+  <rect x="70" y="0" width="698" height="70" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="100" y="42" font-family="system-ui" font-size="22" font-weight="bold" fill="#333">Mon Profil</text>
+  
+  <!-- User Menu -->
+  <circle cx="710" cy="35" r="18" fill="#e0e0e0"/>
+  
+  <!-- Profile Header -->
+  <rect x="90" y="90" width="600" height="180" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Cover -->
+  <rect x="90" y="90" width="600" height="70" rx="12 12 0 0" fill="#4A90E2"/>
+  
+  <!-- Avatar -->
+  <circle cx="180" cy="160" r="50" fill="#ffffff" stroke="#e0e0e0" stroke-width="4"/>
+  <circle cx="180" cy="160" r="45" fill="#e0e0e0"/>
+  <text x="180" y="172" text-anchor="middle" font-family="system-ui" font-size="32" fill="#999">👤</text>
+  
+  <!-- Name -->
+  <text x="250" y="180" font-family="system-ui" font-size="20" font-weight="bold" fill="#333">Jean Dupont</text>
+  <text x="250" y="205" font-family="system-ui" font-size="13" fill="#666">Chef de Projet • Utilisateur N+1</text>
+  <text x="250" y="225" font-family="system-ui" font-size="11" fill="#999">jean.dupont@entreprise.com</text>
+  
+  <!-- Edit button -->
+  <rect x="570" y="195" width="100" height="32" rx="8" fill="#4A90E2"/>
+  <text x="620" y="216" text-anchor="middle" font-family="system-ui" font-size="12" fill="#ffffff">✏️ Modifier</text>
+  
+  <!-- Stats Cards -->
+  <rect x="90" y="290" width="145" height="90" rx="10" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="110" y="320" font-family="system-ui" font-size="11" fill="#666">Heures/mois</text>
+  <text x="110" y="355" font-family="system-ui" font-size="26" font-weight="bold" fill="#4A90E2">164h</text>
+  
+  <rect x="245" y="290" width="145" height="90" rx="10" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="265" y="320" font-family="system-ui" font-size="11" fill="#666">Projets actifs</text>
+  <text x="265" y="355" font-family="system-ui" font-size="26" font-weight="bold" fill="#28a745">5</text>
+  
+  <rect x="400" y="290" width="145" height="90" rx="10" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="420" y="320" font-family="system-ui" font-size="11" fill="#666">Tâches faites</text>
+  <text x="420" y="355" font-family="system-ui" font-size="26" font-weight="bold" fill="#ffc107">28</text>
+  
+  <rect x="555" y="290" width="135" height="90" rx="10" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="575" y="320" font-family="system-ui" font-size="11" fill="#666">Efficacité</text>
+  <text x="575" y="355" font-family="system-ui" font-size="26" font-weight="bold" fill="#28a745">94%</text>
+  
+  <!-- Personal Info -->
+  <rect x="90" y="400" width="600" height="280" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="120" y="440" font-family="system-ui" font-size="16" font-weight="600" fill="#333">Informations personnelles</text>
+  
+  <!-- 2 column layout -->
+  <text x="120" y="485" font-family="system-ui" font-size="12" fill="#666">Nom complet</text>
+  <text x="120" y="505" font-family="system-ui" font-size="14" fill="#333">Jean Dupont</text>
+  
+  <text x="400" y="485" font-family="system-ui" font-size="12" fill="#666">Téléphone</text>
+  <text x="400" y="505" font-family="system-ui" font-size="14" fill="#333">+33 6 12 34 56 78</text>
+  
+  <text x="120" y="545" font-family="system-ui" font-size="12" fill="#666">Email</text>
+  <text x="120" y="565" font-family="system-ui" font-size="14" fill="#333">jean.dupont@entreprise.com</text>
+  
+  <text x="400" y="545" font-family="system-ui" font-size="12" fill="#666">Département</text>
+  <text x="400" y="565" font-family="system-ui" font-size="14" fill="#333">IT - Développement</text>
+  
+  <text x="120" y="605" font-family="system-ui" font-size="12" fill="#666">Manager</text>
+  <text x="120" y="625" font-family="system-ui" font-size="14" fill="#333">Marie Martin</text>
+  
+  <text x="400" y="605" font-family="system-ui" font-size="12" fill="#666">Date d'entrée</text>
+  <text x="400" y="625" font-family="system-ui" font-size="14" fill="#333">15 Mars 2022</text>
+  
+  <!-- Activity -->
+  <rect x="90" y="700" width="600" height="280" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="120" y="740" font-family="system-ui" font-size="16" font-weight="600" fill="#333">Activité récente</text>
+  
+  <circle cx="135" cy="790" r="4" fill="#4A90E2"/>
+  <text x="155" y="786" font-family="system-ui" font-size="12" fill="#333">Tâche terminée: Design maquette</text>
+  <text x="155" y="804" font-family="system-ui" font-size="10" fill="#999">Il y a 2 heures • Projet Alpha</text>
+  
+  <circle cx="135" cy="850" r="4" fill="#28a745"/>
+  <text x="155" y="846" font-family="system-ui" font-size="12" fill="#333">Temps enregistré: 3h30</text>
+  <text x="155" y="864" font-family="system-ui" font-size="10" fill="#999">Il y a 4 heures • Dev API</text>
+  
+  <circle cx="135" cy="910" r="4" fill="#ffc107"/>
+  <text x="155" y="906" font-family="system-ui" font-size="12" fill="#333">Commentaire ajouté</text>
+  <text x="155" y="924" font-family="system-ui" font-size="10" fill="#999">Hier à 16:30 • Projet Beta</text>
+  
+  <text x="120" y="965" font-family="system-ui" font-size="12" fill="#4A90E2">Voir toute l'activité →</text>
+</svg>

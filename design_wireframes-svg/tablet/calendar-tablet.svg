@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 1024" width="768" height="1024">
+  <!-- Tablet Calendar Wireframe -->
+  <title>Calendar - Tablet Wireframe</title>
+  
+  <!-- Background -->
+  <rect width="768" height="1024" fill="#f5f5f5"/>
+  
+  <!-- Sidebar (collapsed) -->
+  <rect width="70" height="1024" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Icons -->
+  <rect x="15" y="20" width="40" height="40" rx="8" fill="#4A90E2"/>
+  <text x="25" y="45" font-family="system-ui" font-size="14" fill="#fff">TM</text>
+  
+  <circle cx="35" cy="100" r="15" fill="#f5f5f5"/>
+  <text x="28" y="105" font-family="system-ui" font-size="12">📊</text>
+  
+  <circle cx="35" cy="150" r="15" fill="#f5f5f5"/>
+  <text x="28" y="155" font-family="system-ui" font-size="12">👥</text>
+  
+  <circle cx="35" cy="200" r="15" fill="#f5f5f5"/>
+  <text x="28" y="205" font-family="system-ui" font-size="12">📁</text>
+  
+  <circle cx="35" cy="250" r="15" fill="#f5f5f5"/>
+  <text x="28" y="255" font-family="system-ui" font-size="12">✅</text>
+  
+  <circle cx="35" cy="300" r="15" fill="#4A90E2"/>
+  <text x="28" y="305" font-family="system-ui" font-size="12">📅</text>
+  
+  <!-- Main Content -->
+  <rect x="70" y="0" width="698" height="1024" fill="#f5f5f5"/>
+  
+  <!-- Top Bar -->
+  <rect x="70" y="0" width="698" height="70" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="100" y="42" font-family="system-ui" font-size="22" font-weight="bold" fill="#333">Calendrier</text>
+  
+  <!-- View Toggle -->
+  <rect x="380" y="15" width="200" height="40" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="415" y="42" text-anchor="middle" font-family="system-ui" font-size="12" fill="#666">Jour</text>
+  <rect x="445" y="15" width="66" height="40" rx="8" fill="#4A90E2"/>
+  <text x="478" y="42" text-anchor="middle" font-family="system-ui" font-size="12" fill="#ffffff">Sem</text>
+  <text x="545" y="42" text-anchor="middle" font-family="system-ui" font-size="12" fill="#666">Mois</text>
+  
+  <!-- Add Button -->
+  <rect x="600" y="15" width="120" height="40" rx="8" fill="#4A90E2"/>
+  <text x="660" y="42" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="500" fill="#ffffff">+ Ajouter</text>
+  
+  <!-- Calendar Header -->
+  <rect x="90" y="90" width="600" height="45" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="120" y="118" font-family="system-ui" font-size="16">◀</text>
+  <text x="390" y="118" text-anchor="middle" font-family="system-ui" font-size="15" font-weight="bold" fill="#333">2 - 8 Décembre 2024</text>
+  <text x="660" y="118" font-family="system-ui" font-size="16">▶</text>
+  
+  <!-- Week View (3 day view for tablet) -->
+  <rect x="90" y="145" width="600" height="830" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Day headers -->
+  <rect x="140" y="145" width="180" height="35" fill="#e3f2fd"/>
+  <text x="230" y="168" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#4A90E2">MAR 3</text>
+  
+  <rect x="320" y="145" width="180" height="35" fill="#f5f5f5"/>
+  <text x="410" y="168" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#333">MER 4</text>
+  
+  <rect x="500" y="145" width="190" height="35" fill="#f5f5f5"/>
+  <text x="595" y="168" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#333">JEU 5</text>
+  
+  <!-- Time column -->
+  <text x="105" y="210" font-family="system-ui" font-size="10" fill="#999">08:00</text>
+  <text x="105" y="280" font-family="system-ui" font-size="10" fill="#999">09:00</text>
+  <text x="105" y="350" font-family="system-ui" font-size="10" fill="#999">10:00</text>
+  <text x="105" y="420" font-family="system-ui" font-size="10" fill="#999">11:00</text>
+  <text x="105" y="490" font-family="system-ui" font-size="10" fill="#999">12:00</text>
+  <text x="105" y="560" font-family="system-ui" font-size="10" fill="#999">13:00</text>
+  <text x="105" y="630" font-family="system-ui" font-size="10" fill="#999">14:00</text>
+  <text x="105" y="700" font-family="system-ui" font-size="10" fill="#999">15:00</text>
+  <text x="105" y="770" font-family="system-ui" font-size="10" fill="#999">16:00</text>
+  <text x="105" y="840" font-family="system-ui" font-size="10" fill="#999">17:00</text>
+  <text x="105" y="910" font-family="system-ui" font-size="10" fill="#999">18:00</text>
+  
+  <!-- Grid lines -->
+  <line x1="140" y1="180" x2="690" y2="180" stroke="#e0e0e0"/>
+  <line x1="140" y1="250" x2="690" y2="250" stroke="#f0f0f0"/>
+  <line x1="140" y1="320" x2="690" y2="320" stroke="#f0f0f0"/>
+  <line x1="140" y1="390" x2="690" y2="390" stroke="#f0f0f0"/>
+  <line x1="140" y1="460" x2="690" y2="460" stroke="#f0f0f0"/>
+  <line x1="140" y1="530" x2="690" y2="530" stroke="#f0f0f0"/>
+  <line x1="140" y1="600" x2="690" y2="600" stroke="#f0f0f0"/>
+  <line x1="140" y1="670" x2="690" y2="670" stroke="#f0f0f0"/>
+  <line x1="140" y1="740" x2="690" y2="740" stroke="#f0f0f0"/>
+  <line x1="140" y1="810" x2="690" y2="810" stroke="#f0f0f0"/>
+  <line x1="140" y1="880" x2="690" y2="880" stroke="#f0f0f0"/>
+  
+  <line x1="320" y1="180" x2="320" y2="970" stroke="#e0e0e0"/>
+  <line x1="500" y1="180" x2="500" y2="970" stroke="#e0e0e0"/>
+  
+  <!-- Events -->
+  <rect x="145" y="280" width="170" height="140" rx="4" fill="#28a745"/>
+  <text x="155" y="300" font-family="system-ui" font-size="11" font-weight="500" fill="#ffffff">Dev API</text>
+  <text x="155" y="318" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">09:00 - 12:00</text>
+  <text x="155" y="336" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">📁 Projet Beta</text>
+  
+  <rect x="325" y="320" width="170" height="100" rx="4" fill="#ffc107"/>
+  <text x="335" y="340" font-family="system-ui" font-size="11" font-weight="500" fill="#333">Review Design</text>
+  <text x="335" y="358" font-family="system-ui" font-size="9" fill="rgba(0,0,0,0.6)">10:00 - 12:00</text>
+  
+  <rect x="505" y="600" width="180" height="100" rx="4" fill="#dc3545"/>
+  <text x="515" y="620" font-family="system-ui" font-size="11" font-weight="500" fill="#ffffff">Deadline Urgent</text>
+  <text x="515" y="638" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">14:00 - 16:00</text>
+  
+  <!-- Swipe hint -->
+  <text x="390" y="960" text-anchor="middle" font-family="system-ui" font-size="10" fill="#999">← Glisser pour autres jours →</text>
+  
+  <!-- Annotation -->
+  <rect x="90" y="980" width="600" height="35" rx="8" fill="#fff9c4" stroke="#ffc107"/>
+  <text x="110" y="1002" font-family="system-ui" font-size="11" fill="#856404">📱 Tablet - Vue 3 jours avec scroll horizontal</text>
+</svg>

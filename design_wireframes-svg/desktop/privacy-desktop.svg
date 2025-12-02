@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900">
+  <!-- Desktop Privacy Wireframe -->
+  <title>Privacy - Desktop Wireframe</title>
+  
+  <!-- Background -->
+  <rect width="1440" height="900" fill="#f5f5f5"/>
+  
+  <!-- Header -->
+  <rect width="1440" height="70" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <rect x="50" y="15" width="180" height="40" rx="8" fill="#4A90E2"/>
+  <text x="140" y="42" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#ffffff">TimeManager</text>
+  
+  <rect x="1270" y="15" width="120" height="40" rx="8" fill="#4A90E2"/>
+  <text x="1330" y="42" text-anchor="middle" font-family="system-ui" font-size="14" fill="#ffffff">Connexion</text>
+  
+  <!-- Sidebar TOC -->
+  <rect x="50" y="110" width="280" height="700" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="80" y="150" font-family="system-ui" font-size="16" font-weight="600" fill="#333">Table des matières</text>
+  
+  <rect x="65" y="175" width="250" height="35" rx="6" fill="#e3f2fd"/>
+  <text x="80" y="198" font-family="system-ui" font-size="13" fill="#4A90E2">1. Introduction</text>
+  
+  <text x="80" y="238" font-family="system-ui" font-size="13" fill="#666">2. Données collectées</text>
+  <text x="80" y="268" font-family="system-ui" font-size="13" fill="#666">3. Finalités du traitement</text>
+  <text x="80" y="298" font-family="system-ui" font-size="13" fill="#666">4. Base légale</text>
+  <text x="80" y="328" font-family="system-ui" font-size="13" fill="#666">5. Destinataires des données</text>
+  <text x="80" y="358" font-family="system-ui" font-size="13" fill="#666">6. Conservation des données</text>
+  <text x="80" y="388" font-family="system-ui" font-size="13" fill="#666">7. Vos droits RGPD</text>
+  <text x="80" y="418" font-family="system-ui" font-size="13" fill="#666">8. Cookies</text>
+  <text x="80" y="448" font-family="system-ui" font-size="13" fill="#666">9. Sécurité</text>
+  <text x="80" y="478" font-family="system-ui" font-size="13" fill="#666">10. Contact DPO</text>
+  
+  <!-- Main Content -->
+  <rect x="360" y="110" width="1030" height="700" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- RGPD Badge -->
+  <rect x="1200" y="130" width="150" height="35" rx="6" fill="#28a745" opacity="0.1"/>
+  <text x="1275" y="154" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="600" fill="#28a745">✓ Conforme RGPD</text>
+  
+  <!-- Title -->
+  <text x="720" y="170" text-anchor="middle" font-family="system-ui" font-size="32" font-weight="bold" fill="#333">Politique de Confidentialité</text>
+  <text x="720" y="205" text-anchor="middle" font-family="system-ui" font-size="14" fill="#666">Dernière mise à jour : 1er décembre 2024</text>
+  
+  <!-- Section 1 -->
+  <text x="410" y="270" font-family="system-ui" font-size="20" font-weight="600" fill="#333">1. Introduction</text>
+  <text x="410" y="305" font-family="system-ui" font-size="14" fill="#666">TimeManager SAS (ci-après « nous », « notre ») s'engage à protéger la vie privée des</text>
+  <text x="410" y="330" font-family="system-ui" font-size="14" fill="#666">utilisateurs de ses services. Cette politique de confidentialité explique comment nous</text>
+  <text x="410" y="355" font-family="system-ui" font-size="14" fill="#666">collectons, utilisons et protégeons vos données personnelles.</text>
+  
+  <!-- Section 2 -->
+  <text x="410" y="410" font-family="system-ui" font-size="20" font-weight="600" fill="#333">2. Données collectées</text>
+  <text x="410" y="445" font-family="system-ui" font-size="14" fill="#666">Nous collectons les catégories de données suivantes :</text>
+  
+  <text x="430" y="480" font-family="system-ui" font-size="14" fill="#666">📧 <tspan font-weight="500">Données d'identification :</tspan> nom, prénom, email, photo de profil</text>
+  <text x="430" y="510" font-family="system-ui" font-size="14" fill="#666">🏢 <tspan font-weight="500">Données professionnelles :</tspan> fonction, département, manager</text>
+  <text x="430" y="540" font-family="system-ui" font-size="14" fill="#666">⏱️ <tspan font-weight="500">Données d'utilisation :</tspan> temps de travail, tâches, projets</text>
+  <text x="430" y="570" font-family="system-ui" font-size="14" fill="#666">💻 <tspan font-weight="500">Données techniques :</tspan> adresse IP, logs de connexion, navigateur</text>
+  
+  <!-- Section 7 - Droits RGPD -->
+  <text x="410" y="630" font-family="system-ui" font-size="20" font-weight="600" fill="#333">7. Vos droits (RGPD)</text>
+  <text x="410" y="665" font-family="system-ui" font-size="14" fill="#666">Conformément au Règlement Général sur la Protection des Données, vous disposez de :</text>
+  
+  <!-- Rights boxes -->
+  <rect x="410" y="690" width="150" height="70" rx="8" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="485" y="720" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="500" fill="#333">Droit d'accès</text>
+  <text x="485" y="740" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">Art. 15 RGPD</text>
+  
+  <rect x="575" y="690" width="150" height="70" rx="8" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="650" y="720" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="500" fill="#333">Droit de rectification</text>
+  <text x="650" y="740" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">Art. 16 RGPD</text>
+  
+  <rect x="740" y="690" width="150" height="70" rx="8" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="815" y="720" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="500" fill="#333">Droit à l'effacement</text>
+  <text x="815" y="740" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">Art. 17 RGPD</text>
+  
+  <rect x="905" y="690" width="150" height="70" rx="8" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="980" y="720" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="500" fill="#333">Droit à la portabilité</text>
+  <text x="980" y="740" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">Art. 20 RGPD</text>
+  
+  <rect x="1070" y="690" width="150" height="70" rx="8" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="1145" y="720" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="500" fill="#333">Droit d'opposition</text>
+  <text x="1145" y="740" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">Art. 21 RGPD</text>
+  
+  <!-- Footer -->
+  <rect y="830" width="1440" height="70" fill="#333"/>
+  <text x="200" y="870" font-family="system-ui" font-size="12" fill="#999">© 2024 TimeManager. Tous droits réservés.</text>
+  <text x="720" y="870" text-anchor="middle" font-family="system-ui" font-size="12" fill="#999">Mentions légales</text>
+  <text x="850" y="870" text-anchor="middle" font-family="system-ui" font-size="12" fill="#999">CGU</text>
+  <text x="960" y="870" text-anchor="middle" font-family="system-ui" font-size="12" fill="#4A90E2">Confidentialité</text>
+</svg>
