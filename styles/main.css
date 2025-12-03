@@ -24,6 +24,7 @@
   /* Couleurs sémantiques */
   --success: #28a745;
   --warning: #ffc107;
+  --warning-text: #856404;
   --danger: #dc3545;
   --info: #17a2b8;
 
@@ -46,6 +47,7 @@
   --accent-hover: #7ab5ff;
   --success: #34ce57;
   --warning: #ffca2c;
+  --warning-text: #997404;
   --danger: #e64757;
   --info: #20c9e0;
   --border: #404040;
@@ -839,7 +841,7 @@ select.form-control {
 
 .badge-warning {
   background-color: rgba(255, 193, 7, 0.1);
-  color: #856404;
+  color: var(--warning-text);
 }
 
 .badge-danger {

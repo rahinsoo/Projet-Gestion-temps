@@ -1359,8 +1359,18 @@ const TimeTracker = {
 
     this.intervalId = setInterval(() => this.updateDisplay(), 1000);
     
-    document.getElementById('tracker-start').classList.add('hidden');
-    document.getElementById('tracker-stop').classList.remove('hidden');
+    // Update both small and large tracker buttons
+    const startBtns = ['tracker-start', 'tracker-start-large'];
+    const stopBtns = ['tracker-stop', 'tracker-stop-large'];
+    
+    startBtns.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('hidden');
+    });
+    stopBtns.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('hidden');
+    });
     
     const task = TasksManager.getTasksByProject(projectId).find(t => t.id === parseInt(taskId));
     if (task) {
@@ -1393,8 +1403,19 @@ const TimeTracker = {
     this.currentProjectId = null;
     this.currentTaskId = null;
     
-    document.getElementById('tracker-start').classList.remove('hidden');
-    document.getElementById('tracker-stop').classList.add('hidden');
+    // Update both small and large tracker buttons
+    const startBtns = ['tracker-start', 'tracker-start-large'];
+    const stopBtns = ['tracker-stop', 'tracker-stop-large'];
+    
+    startBtns.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('hidden');
+    });
+    stopBtns.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('hidden');
+    });
+    
     document.getElementById('tracker-info').textContent = 'Sélectionnez une tâche';
     
     this.updateDisplay();
@@ -1411,10 +1432,14 @@ const TimeTracker = {
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
 
-    const display = document.getElementById('tracker-display');
-    if (display) {
-      display.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    }
+    const timeStr = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    
+    // Update both displays
+    const displays = ['tracker-display', 'tracker-display-large'];
+    displays.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = timeStr;
+    });
   }
 };
 
