@@ -1,0 +1,29 @@
+{
+  "name": "timemanager-backend",
+  "version": "1.0.0",
+  "description": "Backend API REST pour l'application TimeManager - Gestion du temps",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "init-db": "node scripts/initDatabase.js"
+  },
+  "keywords": [
+    "timemanager",
+    "api",
+    "rest",
+    "sqlite",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

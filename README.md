@@ -2,15 +2,17 @@
 
 ## 📋 Description
 
-Application web front-end complète de gestion du temps de travail. Elle permet de gérer des utilisateurs, clients, projets et tâches avec un système de tracking du temps intégré. Les données sont stockées dans localStorage pour une utilisation sans backend.
+Application web complète de gestion du temps de travail avec frontend et backend. Elle permet de gérer des utilisateurs, clients, projets et tâches avec un système de tracking du temps intégré. L'application dispose d'un frontend autonome (localStorage) et d'un backend Node.js avec API REST et base de données SQLite.
 
 ## 🚀 Démarrage rapide
+
+### Frontend
 
 1. Ouvrez `index.html` dans votre navigateur
 2. L'application chargera automatiquement les données initiales depuis les fichiers JSON
 3. Naviguez entre les différentes sections via le menu latéral
 
-### Avec un serveur local (recommandé)
+#### Avec un serveur local (recommandé)
 
 ```bash
 # Avec Python 3
@@ -24,6 +26,27 @@ php -S localhost:8000
 ```
 
 Puis ouvrez `http://localhost:8000` dans votre navigateur.
+
+### Backend (API REST)
+
+```bash
+# Accédez au dossier backend
+cd backend
+
+# Installez les dépendances
+npm install
+
+# Initialisez la base de données avec les données de démonstration
+npm run init-db
+
+# Démarrez le serveur
+npm start
+
+# Ou en mode développement (avec rechargement automatique)
+npm run dev
+```
+
+L'API sera disponible sur `http://localhost:3000/api`
 
 ## 🎯 Fonctionnalités
 
@@ -54,6 +77,33 @@ Projet-Gestion-temps/
 │   ├── users.json          # Données des utilisateurs
 │   ├── clients.json        # Données des clients
 │   └── projects.json       # Données des projets et tâches
+├── backend/                # API REST Node.js
+│   ├── app.js              # Point d'entrée de l'application
+│   ├── package.json        # Dépendances du projet
+│   ├── .env                # Variables d'environnement
+│   ├── config/
+│   │   ├── database.js     # Configuration SQLite
+│   │   └── constants.js    # Constantes de l'application
+│   ├── models/
+│   │   ├── User.js         # Modèle utilisateur
+│   │   ├── Client.js       # Modèle client
+│   │   ├── Project.js      # Modèle projet
+│   │   └── Task.js         # Modèle tâche
+│   ├── controllers/
+│   │   ├── userController.js    # Contrôleur CRUD utilisateurs
+│   │   ├── clientController.js  # Contrôleur CRUD clients
+│   │   ├── projectController.js # Contrôleur CRUD projets
+│   │   └── taskController.js    # Contrôleur CRUD tâches
+│   ├── routes/
+│   │   ├── userRoutes.js   # Routes API utilisateurs
+│   │   ├── clientRoutes.js # Routes API clients
+│   │   ├── projectRoutes.js# Routes API projets
+│   │   └── taskRoutes.js   # Routes API tâches
+│   ├── middleware/
+│   │   ├── errorHandler.js # Gestion des erreurs
+│   │   └── validation.js   # Validation des données
+│   └── scripts/
+│       └── initDatabase.js # Script d'initialisation DB
 ├── wireframes/             # Wireframes de référence (design original)
 │   ├── css/
 │   ├── js/
@@ -154,10 +204,91 @@ Projet-Gestion-temps/
 
 ## 🛠️ Technologies utilisées
 
+### Frontend
 - **HTML5** : Structure sémantique
 - **CSS3** : Styles avec variables CSS et Flexbox/Grid
 - **JavaScript vanilla** : Aucun framework requis
 - **localStorage** : Stockage des données côté client
+
+### Backend
+- **Node.js** : Runtime JavaScript
+- **Express.js** : Framework web
+- **SQLite3** : Base de données
+- **CORS** : Gestion des requêtes cross-origin
+- **dotenv** : Variables d'environnement
+
+## 🔌 API REST
+
+### Endpoints disponibles
+
+#### Utilisateurs (`/api/users`)
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/users` | Créer un utilisateur |
+| GET | `/api/users` | Liste tous les utilisateurs |
+| GET | `/api/users/:id` | Récupérer un utilisateur |
+| PUT | `/api/users/:id` | Modifier un utilisateur |
+| DELETE | `/api/users/:id` | Supprimer un utilisateur |
+
+#### Clients (`/api/clients`)
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/clients` | Créer un client |
+| GET | `/api/clients` | Liste tous les clients |
+| GET | `/api/clients/:id` | Récupérer un client |
+| PUT | `/api/clients/:id` | Modifier un client |
+| DELETE | `/api/clients/:id` | Supprimer un client |
+
+#### Projets (`/api/projects`)
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/projects` | Créer un projet |
+| GET | `/api/projects` | Liste tous les projets |
+| GET | `/api/projects/:id` | Récupérer un projet |
+| GET | `/api/projects/client/:clientId` | Projets d'un client |
+| PUT | `/api/projects/:id` | Modifier un projet |
+| DELETE | `/api/projects/:id` | Supprimer un projet |
+
+#### Tâches (`/api/tasks`)
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/tasks` | Créer une tâche |
+| GET | `/api/tasks` | Liste toutes les tâches |
+| GET | `/api/tasks/:id` | Récupérer une tâche |
+| GET | `/api/tasks/project/:projectId` | Tâches d'un projet |
+| GET | `/api/tasks/user/:userId` | Tâches d'un utilisateur |
+| PUT | `/api/tasks/:id` | Modifier une tâche |
+| DELETE | `/api/tasks/:id` | Supprimer une tâche |
+
+#### Santé de l'API
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/health` | Vérifier que l'API fonctionne |
+
+### Codes de réponse HTTP
+- `200 OK` : Succès (lecture/mise à jour)
+- `201 Created` : Création réussie
+- `204 No Content` : Suppression réussie
+- `400 Bad Request` : Données invalides
+- `404 Not Found` : Ressource introuvable
+- `500 Internal Server Error` : Erreur serveur
+
+### Exemple de requête
+
+```bash
+# Créer un utilisateur
+curl -X POST http://localhost:3000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"username": "nouveau_user", "email": "user@example.com", "role": "user"}'
+
+# Récupérer tous les clients
+curl http://localhost:3000/api/clients
+
+# Modifier un projet
+curl -X PUT http://localhost:3000/api/projects/1 \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Nouveau nom", "client_id": 1, "description": "Description", "status": "active"}'
+```
 
 ## 📝 Utilisation
 
