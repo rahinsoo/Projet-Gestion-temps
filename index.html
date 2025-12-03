@@ -57,10 +57,17 @@
       </nav>
 
       <div class="sidebar-footer">
-        <button class="nav-item" id="theme-toggle" onclick="ThemeManager.toggle()">
-          <span class="nav-icon">🌙</span>
-          <span class="nav-label">Thème</span>
-        </button>
+        <div class="theme-toggle-container" id="theme-toggle">
+          <span class="theme-toggle-icon sun" aria-hidden="true">☀️</span>
+          <button 
+            class="theme-toggle-switch" 
+            onclick="ThemeManager.toggle()" 
+            aria-label="Basculer entre le mode clair et sombre"
+            role="switch"
+            aria-checked="false"
+          ></button>
+          <span class="theme-toggle-icon moon" aria-hidden="true">🌙</span>
+        </div>
       </div>
     </aside>
 

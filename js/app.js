@@ -1467,9 +1467,9 @@ const ThemeManager = {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem(this.STORAGE_KEY, theme);
     
-    const toggle = document.getElementById('theme-toggle');
-    if (toggle) {
-      toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    const toggleSwitch = document.querySelector('.theme-toggle-switch');
+    if (toggleSwitch) {
+      toggleSwitch.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
     }
   }
 };
