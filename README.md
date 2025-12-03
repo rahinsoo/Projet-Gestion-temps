@@ -1,80 +1,23 @@
-# TimeManager - Wireframes Interactifs
+# TimeManager - Application de Gestion du Temps
 
 ## 📋 Description
 
-Ensemble complet de wireframes interactifs HTML/CSS pour un outil de gestion de temps de travail. Ces wireframes présentent une interface moderne, responsive et accessible avec support du mode clair/sombre.
+Application web front-end complète de gestion du temps de travail. Elle permet de gérer des utilisateurs, clients, projets et tâches avec un système de tracking du temps intégré. Les données sont stockées dans localStorage pour une utilisation sans backend.
 
-## 🎯 Fonctionnalités
+## 🚀 Démarrage rapide
 
-### Acteurs supportés
-- **Administrateur** : Accès complet à toutes les fonctionnalités
-- **Responsable (N+1)** : Gestion d'équipe, validation, reporting
-- **Employé (Standard)** : Saisie de temps, consultation
+1. Ouvrez `index.html` dans votre navigateur
+2. L'application chargera automatiquement les données initiales depuis les fichiers JSON
+3. Naviguez entre les différentes sections via le menu latéral
 
-### Fonctionnalités principales
-- ✅ CRUD clients/entreprises
-- ✅ Gestion de projets via calendrier
-- ✅ Gestion de tâches (vue Kanban, liste, calendrier)
-- ✅ Authentification et gestion de profils
-- ✅ Tableau de bord avec statistiques
-- ✅ Paramètres (thème clair/sombre)
-- ✅ Pages légales (Mentions légales, CGU, Politique de confidentialité)
-
-## 📁 Structure des fichiers
-
-```
-wireframes/
-├── css/
-│   ├── style.css          # Styles globaux
-│   ├── responsive.css     # Media queries
-│   └── themes.css         # Variables thème clair/sombre
-├── js/
-│   ├── main.js            # Interactions de base
-│   └── theme-switcher.js  # Gestion du thème
-├── assets/
-│   ├── logo.svg           # Logo de l'application
-│   └── icons/             # Icônes SVG
-├── pages/
-│   ├── login.html         # Page de connexion
-│   ├── dashboard.html     # Tableau de bord
-│   ├── clients.html       # Gestion des clients
-│   ├── projects.html      # Gestion des projets
-│   ├── tasks.html         # Gestion des tâches
-│   ├── calendar.html      # Calendrier global
-│   ├── profile.html       # Profil utilisateur
-│   ├── settings.html      # Paramètres
-│   ├── legal.html         # Mentions légales
-│   ├── terms.html         # CGU
-│   └── privacy.html       # Politique de confidentialité
-├── design/
-│   └── wireframes-svg/    # Wireframes SVG exportés
-│       ├── mobile/
-│       ├── tablet/
-│       └── desktop/
-├── index.html             # Page d'accueil
-└── README.md              # Documentation
-```
-
-## 🚀 Installation et utilisation
-
-### Prérequis
-- Un navigateur web moderne (Chrome, Firefox, Safari, Edge)
-- Pas de dépendances externes requises
-
-### Démarrage rapide
-1. Clonez le repository
-2. Ouvrez `wireframes/index.html` dans votre navigateur
-3. Naviguez entre les différentes pages via le menu
-
-### Serveur local (optionnel)
-Pour une meilleure expérience, vous pouvez utiliser un serveur local :
+### Avec un serveur local (recommandé)
 
 ```bash
 # Avec Python 3
 python -m http.server 8000
 
-# Avec Node.js (si npx disponible)
-npx serve wireframes
+# Avec Node.js
+npx serve .
 
 # Avec PHP
 php -S localhost:8000
@@ -82,13 +25,102 @@ php -S localhost:8000
 
 Puis ouvrez `http://localhost:8000` dans votre navigateur.
 
-## 📱 Breakpoints Responsive
+## 🎯 Fonctionnalités
 
-| Breakpoint | Largeur | Description |
-|------------|---------|-------------|
-| Mobile | < 768px | Menu hamburger, navigation plein écran |
-| Tablet | 768px - 1024px | Sidebar compactée avec icônes |
-| Desktop | > 1024px | Sidebar complète avec labels |
+### Opérations CRUD complètes
+- ✅ **Utilisateurs** : Création, lecture, modification, suppression
+- ✅ **Clients** : Gestion complète des entreprises clientes
+- ✅ **Projets** : Création et suivi des projets par client
+- ✅ **Tâches** : Gestion des tâches avec assignation et suivi du temps
+
+### Interface utilisateur
+- ✅ **Dashboard** : Tableau de bord avec statistiques en temps réel
+- ✅ **Vue Kanban** : Gestion visuelle des tâches (À faire, En cours, Terminé)
+- ✅ **Vue Liste** : Affichage tabulaire des données
+- ✅ **Time Tracker** : Chronomètre intégré pour le suivi du temps
+- ✅ **Thème clair/sombre** : Support des deux modes d'affichage
+- ✅ **Responsive Design** : Compatible mobile, tablette et desktop
+
+## 📁 Structure du projet
+
+```
+Projet-Gestion-temps/
+├── index.html              # Page principale de l'application
+├── styles/
+│   └── main.css            # Styles CSS de l'application
+├── js/
+│   └── app.js              # Logique JavaScript et gestion des données
+├── data/
+│   ├── users.json          # Données des utilisateurs
+│   ├── clients.json        # Données des clients
+│   └── projects.json       # Données des projets et tâches
+├── wireframes/             # Wireframes de référence (design original)
+│   ├── css/
+│   ├── js/
+│   ├── pages/
+│   └── assets/
+└── README.md               # Documentation
+```
+
+## 📊 Structure des données JSON
+
+### users.json
+```json
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@timemanager.fr",
+      "role": "admin|user",
+      "created_at": "2024-01-15T09:00:00Z"
+    }
+  ]
+}
+```
+
+### clients.json
+```json
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "TechCorp SA",
+      "email": "contact@techcorp.fr",
+      "phone": "+33 1 23 45 67 89",
+      "company": "TechCorp SA",
+      "created_at": "2024-01-10T09:00:00Z"
+    }
+  ]
+}
+```
+
+### projects.json
+```json
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Projet Alpha",
+      "client_id": 1,
+      "description": "Description du projet",
+      "status": "active|completed|on-hold",
+      "created_at": "2024-11-01T09:00:00Z",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Nom de la tâche",
+          "description": "Description",
+          "assigned_to": 1,
+          "time_spent": 4,
+          "status": "todo|in-progress|done",
+          "created_at": "2024-11-01T09:00:00Z"
+        }
+      ]
+    }
+  ]
+}
+```
 
 ## 🎨 Système de design
 
@@ -112,87 +144,41 @@ Puis ouvrez `http://localhost:8000` dans votre navigateur.
 --border: #404040;
 ```
 
-### Couleurs sémantiques
-- **Success** : `#28a745` (vert)
-- **Warning** : `#ffc107` (jaune)
-- **Danger** : `#dc3545` (rouge)
-- **Info** : `#17a2b8` (bleu clair)
+## 📱 Responsive Design
 
-## 🧩 Composants UI
+| Breakpoint | Largeur | Description |
+|------------|---------|-------------|
+| Mobile | < 768px | Menu hamburger, navigation plein écran |
+| Tablet | 768px - 1024px | Layout adaptatif |
+| Desktop | > 1024px | Sidebar complète avec labels |
 
-### Navigation
-- Sidebar (Desktop/Tablet) : Menu vertical avec icônes et labels
-- Top Bar : Header avec logo, recherche, notifications, profil
-- Mobile Menu : Menu hamburger responsive
+## 🛠️ Technologies utilisées
 
-### Éléments UI disponibles
-- ✅ Boutons (Primary, Secondary, Danger, Success, Outline)
-- ✅ Formulaires avec validation visuelle
-- ✅ Tableaux de données avec pagination
-- ✅ Cards/Cartes informationnelles
-- ✅ Modals/Pop-ups
-- ✅ Calendriers interactifs
-- ✅ Graphiques (placeholders)
-- ✅ Badges et labels
-- ✅ Dropdowns
-- ✅ Toggles
-- ✅ Breadcrumbs
-- ✅ Alertes
+- **HTML5** : Structure sémantique
+- **CSS3** : Styles avec variables CSS et Flexbox/Grid
+- **JavaScript vanilla** : Aucun framework requis
+- **localStorage** : Stockage des données côté client
 
-## 🔄 Interactions JavaScript
+## 📝 Utilisation
 
-### Fonctionnalités implémentées
-- Toggle du menu mobile
-- Ouverture/fermeture des modals
-- Dropdowns interactifs
-- Validation de formulaires
-- Changement de thème (clair/sombre)
-- Navigation dans le calendrier
-- Changement de vue (Kanban/Liste/Calendrier)
-- Notifications toast
-- Sélection de rôle utilisateur (démo)
+### Gestion des clients
+1. Cliquez sur "Clients" dans le menu
+2. Utilisez le bouton "+ Nouveau client" pour ajouter un client
+3. Modifiez ou supprimez via les boutons d'action
 
-### API JavaScript
-```javascript
-// Notifications
-window.TimeManager.showNotification('Message', 'success');
+### Gestion des projets
+1. Cliquez sur "Projets" dans le menu
+2. Créez un projet en l'associant à un client
+3. Suivez la progression via la barre de progression
 
-// Modals
-window.TimeManager.openModal(element);
-window.TimeManager.closeModal(element);
+### Gestion des tâches
+1. Cliquez sur "Tâches" dans le menu
+2. Basculez entre vue Kanban et Liste
+3. Créez des tâches, assignez-les et suivez le temps
 
-// Thème
-window.ThemeSwitcher.toggle();
-window.ThemeSwitcher.set('dark');
-window.ThemeSwitcher.isDark();
-```
-
-## 👥 Gestion des rôles
-
-Les wireframes incluent un sélecteur de rôle pour démontrer les différentes vues :
-
-- **Employé** : Vue standard avec accès aux fonctionnalités de base
-- **Responsable** : Vue avec section équipe et fonctionnalités de gestion
-- **Admin** : Accès complet avec paramètres d'administration
-
-Le rôle est sauvegardé dans `localStorage` pour persister entre les sessions.
-
-## 📄 Pages incluses
-
-| Page | Description | Fichier |
-|------|-------------|---------|
-| Accueil | Hub de navigation | `index.html` |
-| Connexion | Authentification | `pages/login.html` |
-| Tableau de bord | Vue d'ensemble | `pages/dashboard.html` |
-| Clients | CRUD clients | `pages/clients.html` |
-| Projets | Gestion projets | `pages/projects.html` |
-| Tâches | Gestion tâches | `pages/tasks.html` |
-| Calendrier | Vue calendrier | `pages/calendar.html` |
-| Profil | Profil utilisateur | `pages/profile.html` |
-| Paramètres | Configuration | `pages/settings.html` |
-| Mentions légales | Informations légales | `pages/legal.html` |
-| CGU | Conditions d'utilisation | `pages/terms.html` |
-| Confidentialité | Politique RGPD | `pages/privacy.html` |
+### Suivi du temps
+1. Dans la vue Tâches, cliquez sur ⏱️ pour ajouter du temps
+2. Le chronomètre global est visible dans la barre supérieure
 
 ## ♿ Accessibilité
 
@@ -200,9 +186,7 @@ Le rôle est sauvegardé dans `localStorage` pour persister entre les sessions.
 - Labels ARIA pour les éléments interactifs
 - Navigation au clavier
 - Contraste suffisant (WCAG 2.1)
-- Focus visible
-- Support `prefers-reduced-motion`
-- Support `prefers-color-scheme`
+- Support des préférences de couleur système
 
 ## 🌐 Compatibilité navigateurs
 
@@ -213,27 +197,13 @@ Le rôle est sauvegardé dans `localStorage` pour persister entre les sessions.
 | Safari | 13+ |
 | Edge | 80+ |
 
-## 📝 Notes de développement
+## 📄 Wireframes de référence
 
-### Points d'attention
-- Les graphiques utilisent des placeholders (à remplacer par Chart.js en production)
-- Les données sont statiques (wireframes uniquement)
-- Pas de backend requis
-- Les formulaires simulent la validation côté client
-
-### Extensions possibles
-- Intégration Chart.js pour les graphiques
-- Drag & drop pour le calendrier
-- Export PDF des rapports
-- Intégration API REST
+Les wireframes originaux sont disponibles dans le dossier `wireframes/`. Vous pouvez les consulter en ouvrant `wireframes/index.html`.
 
 ## 📜 Licence
 
-Ce projet de wireframes est fourni à des fins de démonstration et de maquettage.
-
-## 👤 Contact
-
-Pour toute question concernant ces wireframes, contactez l'équipe de développement.
+Ce projet est fourni à des fins de démonstration et d'apprentissage.
 
 ---
 

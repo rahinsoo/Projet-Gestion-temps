@@ -1,0 +1,36 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "TechCorp SA",
+      "email": "contact@techcorp.fr",
+      "phone": "+33 1 23 45 67 89",
+      "company": "TechCorp SA",
+      "created_at": "2024-01-10T09:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "FinanceStart",
+      "email": "s.bernard@financestart.com",
+      "phone": "+33 1 98 76 54 32",
+      "company": "FinanceStart",
+      "created_at": "2024-02-05T11:30:00Z"
+    },
+    {
+      "id": 3,
+      "name": "RetailMax SARL",
+      "email": "pierre@retailmax.fr",
+      "phone": "+33 1 11 22 33 44",
+      "company": "RetailMax SARL",
+      "created_at": "2024-03-01T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "name": "HealthPlus",
+      "email": "claire.petit@healthplus.org",
+      "phone": "+33 1 55 66 77 88",
+      "company": "HealthPlus",
+      "created_at": "2024-03-15T14:30:00Z"
+    }
+  ]
+}
