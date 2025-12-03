@@ -1516,7 +1516,7 @@ html:not([data-theme]) .theme-toggle-icon.moon {
   position: relative;
   width: 44px;
   height: 24px;
-  background-color: #3d3d3d;
+  background-color: var(--bg-hover);
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -1553,11 +1553,11 @@ html:not([data-theme]) .theme-toggle-switch::after {
 
 [data-theme="light"] .theme-toggle-switch,
 html:not([data-theme]) .theme-toggle-switch {
-  background-color: #4A90E2;
+  background-color: var(--accent);
 }
 
 [data-theme="dark"] .theme-toggle-switch {
-  background-color: #3d3d3d;
+  background-color: var(--bg-hover);
 }
 
 /* ==========================================================================
