@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="TimeManager - Application de Gestion du Temps de Travail">
+  <title>TimeManager - Gestion du Temps</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="wireframes/assets/logo.svg">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="wireframes/assets/logo.svg" alt="TimeManager" class="sidebar-logo">
+        <span class="sidebar-title">TimeManager</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Principal</div>
+          <a href="#" class="nav-item active" data-view="dashboard">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Gestion</div>
+          <a href="#" class="nav-item" data-view="clients">
+            <span class="nav-icon">👥</span>
+            <span class="nav-label">Clients</span>
+          </a>
+          <a href="#" class="nav-item" data-view="projects">
+            <span class="nav-icon">📁</span>
+            <span class="nav-label">Projets</span>
+          </a>
+          <a href="#" class="nav-item" data-view="tasks">
+            <span class="nav-icon">✅</span>
+            <span class="nav-label">Tâches</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Administration</div>
+          <a href="#" class="nav-item" data-view="users">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Utilisateurs</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-item" id="theme-toggle" onclick="ThemeManager.toggle()">
+          <span class="nav-icon">🌙</span>
+          <span class="nav-label">Thème</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Overlay pour mobile -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+          <div class="topbar-search">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="Rechercher..." id="global-search">
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Time Tracker Mini -->
+          <div class="flex items-center gap-1" style="margin-right: 1rem;">
+            <span id="tracker-display" class="font-bold" style="font-family: monospace;">00:00:00</span>
+            <button class="btn btn-sm btn-success" id="tracker-start" onclick="alert('Sélectionnez une tâche pour démarrer le chronomètre')">▶</button>
+            <button class="btn btn-sm btn-danger hidden" id="tracker-stop" onclick="TimeTracker.stop()">⏹</button>
+          </div>
+
+          <div class="dropdown">
+            <div class="user-menu dropdown-trigger">
+              <div class="user-avatar">AD</div>
+              <div class="user-info">
+                <span class="user-name">Admin</span>
+                <span class="user-role">Administrateur</span>
+              </div>
+            </div>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item" onclick="DataManager.reset(); location.reload();">🔄 Réinitialiser données</a>
+              <div class="dropdown-divider"></div>
+              <a href="wireframes/index.html" class="dropdown-item">📐 Voir wireframes</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ============================================================ -->
+      <!-- VUE: DASHBOARD -->
+      <!-- ============================================================ -->
+      <div class="page-content view-section" id="view-dashboard">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Tableau de bord</h1>
+            <nav class="breadcrumb">
+              <span class="breadcrumb-item active">Accueil</span>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Statistiques -->
+        <div class="grid grid-cols-4 mb-4" id="dashboard-stats">
+          <!-- Rempli dynamiquement par JavaScript -->
+        </div>
+
+        <!-- Time Tracker -->
+        <div class="time-tracker mb-4">
+          <div>
+            <div class="time-tracker-display" id="tracker-display-large">00:00:00</div>
+            <div class="text-sm text-muted" id="tracker-info">Sélectionnez une tâche</div>
+          </div>
+          <div class="time-tracker-controls">
+            <button class="btn btn-success" id="tracker-start-large" onclick="alert('Sélectionnez une tâche depuis la vue Tâches')">▶ Démarrer</button>
+            <button class="btn btn-danger hidden" id="tracker-stop-large" onclick="TimeTracker.stop()">⏹ Arrêter</button>
+          </div>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="grid grid-cols-2">
+          <!-- Projets récents -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">📁 Projets récents</h3>
+              <button class="btn btn-sm btn-secondary" onclick="ViewManager.showView('projects')">Voir tout</button>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <div class="table-container" style="border: none; border-radius: 0;">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Projet</th>
+                      <th>Client</th>
+                      <th>Tâches</th>
+                      <th>Progression</th>
+                      <th>Statut</th>
+                    </tr>
+                  </thead>
+                  <tbody id="recent-projects">
+                    <!-- Rempli dynamiquement -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activités récentes -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">🕐 Activités récentes</h3>
+            </div>
+            <div class="card-body" style="padding: 0 1.5rem;">
+              <ul class="activity-list" id="recent-activities">
+                <!-- Rempli dynamiquement -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- VUE: CLIENTS -->
+      <!-- ============================================================ -->
+      <div class="page-content view-section hidden" id="view-clients">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Gestion des Clients</h1>
+            <nav class="breadcrumb">
+              <span class="breadcrumb-item"><a href="#" onclick="ViewManager.showView('dashboard')">Accueil</a></span>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-item active">Clients</span>
+            </nav>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary" onclick="ClientsView.openAddModal()">
+              <span>+</span> Nouveau client
+            </button>
+          </div>
+        </div>
+
+        <!-- Tableau des clients -->
+        <div class="card">
+          <div class="card-body" style="padding: 0;">
+            <div class="table-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Entreprise</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>Projets</th>
+                    <th>Créé le</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="clients-table-body">
+                  <!-- Rempli dynamiquement -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- VUE: PROJETS -->
+      <!-- ============================================================ -->
+      <div class="page-content view-section hidden" id="view-projects">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Gestion des Projets</h1>
+            <nav class="breadcrumb">
+              <span class="breadcrumb-item"><a href="#" onclick="ViewManager.showView('dashboard')">Accueil</a></span>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-item active">Projets</span>
+            </nav>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary" onclick="ProjectsView.openAddModal()">
+              <span>+</span> Nouveau projet
+            </button>
+          </div>
+        </div>
+
+        <!-- Tableau des projets -->
+        <div class="card">
+          <div class="card-body" style="padding: 0;">
+            <div class="table-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Projet</th>
+                    <th>Client</th>
+                    <th>Description</th>
+                    <th>Tâches</th>
+                    <th>Progression</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="projects-table-body">
+                  <!-- Rempli dynamiquement -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- VUE: TÂCHES -->
+      <!-- ============================================================ -->
+      <div class="page-content view-section hidden" id="view-tasks">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Gestion des Tâches</h1>
+            <nav class="breadcrumb">
+              <span class="breadcrumb-item"><a href="#" onclick="ViewManager.showView('dashboard')">Accueil</a></span>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-item active">Tâches</span>
+            </nav>
+          </div>
+          <div class="page-actions">
+            <div class="view-tabs">
+              <button class="view-tab active" data-view="kanban" onclick="TasksView.switchView('kanban')">📋 Kanban</button>
+              <button class="view-tab" data-view="list" onclick="TasksView.switchView('list')">📝 Liste</button>
+            </div>
+            <button class="btn btn-primary" onclick="TasksView.openAddModal()">
+              <span>+</span> Nouvelle tâche
+            </button>
+          </div>
+        </div>
+
+        <!-- Vue Kanban -->
+        <div class="kanban-board" id="tasks-kanban-view">
+          <!-- Colonne À faire -->
+          <div class="kanban-column">
+            <div class="kanban-column-header" style="background-color: rgba(108, 117, 125, 0.1);">
+              <span class="kanban-column-title">📋 À faire <span class="badge badge-secondary" id="count-todo">0</span></span>
+            </div>
+            <div class="kanban-column-body" id="kanban-todo">
+              <!-- Rempli dynamiquement -->
+            </div>
+          </div>
+
+          <!-- Colonne En cours -->
+          <div class="kanban-column">
+            <div class="kanban-column-header" style="background-color: rgba(74, 144, 226, 0.1);">
+              <span class="kanban-column-title">🔄 En cours <span class="badge badge-primary" id="count-in-progress">0</span></span>
+            </div>
+            <div class="kanban-column-body" id="kanban-in-progress">
+              <!-- Rempli dynamiquement -->
+            </div>
+          </div>
+
+          <!-- Colonne Terminé -->
+          <div class="kanban-column">
+            <div class="kanban-column-header" style="background-color: rgba(40, 167, 69, 0.1);">
+              <span class="kanban-column-title">✅ Terminé <span class="badge badge-success" id="count-done">0</span></span>
+            </div>
+            <div class="kanban-column-body" id="kanban-done">
+              <!-- Rempli dynamiquement -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Vue Liste -->
+        <div class="card hidden" id="tasks-list-view">
+          <div class="card-body" style="padding: 0;">
+            <div class="table-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Tâche</th>
+                    <th>Projet</th>
+                    <th>Assigné à</th>
+                    <th>Temps</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tasks-table-body">
+                  <!-- Rempli dynamiquement -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- VUE: UTILISATEURS -->
+      <!-- ============================================================ -->
+      <div class="page-content view-section hidden" id="view-users">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Gestion des Utilisateurs</h1>
+            <nav class="breadcrumb">
+              <span class="breadcrumb-item"><a href="#" onclick="ViewManager.showView('dashboard')">Accueil</a></span>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-item active">Utilisateurs</span>
+            </nav>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary" onclick="UsersView.openAddModal()">
+              <span>+</span> Nouvel utilisateur
+            </button>
+          </div>
+        </div>
+
+        <!-- Tableau des utilisateurs -->
+        <div class="card">
+          <div class="card-body" style="padding: 0;">
+            <div class="table-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Utilisateur</th>
+                    <th>Email</th>
+                    <th>Rôle</th>
+                    <th>Tâches assignées</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="users-table-body">
+                  <!-- Rempli dynamiquement -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- MODALES -->
+  <!-- ============================================================ -->
+
+  <!-- Modal Client -->
+  <div class="modal-overlay" id="modal-client">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-client-title">Nouveau client</h2>
+        <button class="modal-close" data-modal-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="client-form" onsubmit="event.preventDefault(); ClientsView.save();">
+          <input type="hidden" id="client-id">
+          
+          <div class="form-group">
+            <label for="client-name" class="form-label required">Nom de l'entreprise</label>
+            <input type="text" id="client-name" class="form-control" placeholder="Ex: TechCorp SA" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="client-email" class="form-label required">Email</label>
+            <input type="email" id="client-email" class="form-control" placeholder="contact@entreprise.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="client-phone" class="form-label">Téléphone</label>
+            <input type="tel" id="client-phone" class="form-control" placeholder="+33 1 23 45 67 89">
+          </div>
+
+          <div class="form-group">
+            <label for="client-company" class="form-label">Société</label>
+            <input type="text" id="client-company" class="form-control" placeholder="Nom de la société">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-modal-close>Annuler</button>
+        <button type="submit" form="client-form" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Projet -->
+  <div class="modal-overlay" id="modal-project">
+    <div class="modal" style="max-width: 600px;">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-project-title">Nouveau projet</h2>
+        <button class="modal-close" data-modal-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="project-form" onsubmit="event.preventDefault(); ProjectsView.save();">
+          <input type="hidden" id="project-id">
+          
+          <div class="form-group">
+            <label for="project-name" class="form-label required">Nom du projet</label>
+            <input type="text" id="project-name" class="form-control" placeholder="Ex: Refonte site web" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="project-client" class="form-label required">Client</label>
+            <select id="project-client" class="form-control" required>
+              <option value="">Sélectionner un client...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="project-description" class="form-label">Description</label>
+            <textarea id="project-description" class="form-control" rows="3" placeholder="Description du projet..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="project-status" class="form-label">Statut</label>
+            <select id="project-status" class="form-control">
+              <option value="active">Actif</option>
+              <option value="completed">Terminé</option>
+              <option value="on-hold">En pause</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-modal-close>Annuler</button>
+        <button type="submit" form="project-form" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Tâche -->
+  <div class="modal-overlay" id="modal-task">
+    <div class="modal" style="max-width: 550px;">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-task-title">Nouvelle tâche</h2>
+        <button class="modal-close" data-modal-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="task-form" onsubmit="event.preventDefault(); TasksView.save();">
+          <input type="hidden" id="task-id">
+          <input type="hidden" id="task-project-id">
+          
+          <div class="form-group">
+            <label for="task-name" class="form-label required">Nom de la tâche</label>
+            <input type="text" id="task-name" class="form-control" placeholder="Ex: Créer les maquettes UI" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="task-project" class="form-label required">Projet</label>
+            <select id="task-project" class="form-control" required>
+              <option value="">Sélectionner un projet...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="task-description" class="form-label">Description</label>
+            <textarea id="task-description" class="form-control" rows="2" placeholder="Description de la tâche..."></textarea>
+          </div>
+
+          <div class="grid grid-cols-2" style="gap: 1rem;">
+            <div class="form-group">
+              <label for="task-assigned" class="form-label">Assigné à</label>
+              <select id="task-assigned" class="form-control">
+                <option value="">Non assigné</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="task-status" class="form-label">Statut</label>
+              <select id="task-status" class="form-control">
+                <option value="todo">À faire</option>
+                <option value="in-progress">En cours</option>
+                <option value="done">Terminé</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-modal-close>Annuler</button>
+        <button type="submit" form="task-form" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Utilisateur -->
+  <div class="modal-overlay" id="modal-user">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-user-title">Nouvel utilisateur</h2>
+        <button class="modal-close" data-modal-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="user-form" onsubmit="event.preventDefault(); UsersView.save();">
+          <input type="hidden" id="user-id">
+          
+          <div class="form-group">
+            <label for="user-username" class="form-label required">Nom d'utilisateur</label>
+            <input type="text" id="user-username" class="form-control" placeholder="Ex: jdupont" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="user-email" class="form-label required">Email</label>
+            <input type="email" id="user-email" class="form-control" placeholder="email@exemple.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="user-role" class="form-label">Rôle</label>
+            <select id="user-role" class="form-control">
+              <option value="user">Utilisateur</option>
+              <option value="admin">Administrateur</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-modal-close>Annuler</button>
+        <button type="submit" form="user-form" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/app.js"></script>
+</body>
+</html>

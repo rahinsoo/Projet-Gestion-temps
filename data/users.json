@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@timemanager.fr",
+      "role": "admin",
+      "created_at": "2024-01-15T09:00:00Z"
+    },
+    {
+      "id": 2,
+      "username": "jdupont",
+      "email": "jean.dupont@timemanager.fr",
+      "role": "user",
+      "created_at": "2024-02-01T10:30:00Z"
+    },
+    {
+      "id": 3,
+      "username": "mrichard",
+      "email": "marie.richard@timemanager.fr",
+      "role": "user",
+      "created_at": "2024-02-15T14:00:00Z"
+    },
+    {
+      "id": 4,
+      "username": "pleroy",
+      "email": "pierre.leroy@timemanager.fr",
+      "role": "user",
+      "created_at": "2024-03-01T08:45:00Z"
+    }
+  ]
+}
