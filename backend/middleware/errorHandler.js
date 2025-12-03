@@ -3,8 +3,20 @@
 
 const { HTTP_STATUS, ERROR_MESSAGES } = require('../config/constants');
 
+// Fonction pour sanitizer les messages d'erreur
+const sanitizeErrorMessage = (message) => {
+  // Supprime les chemins de fichiers potentiellement sensibles
+  const sanitized = message
+    .replace(/\/[^\s]+/g, '[path]')  // Remplace les chemins Unix
+    .replace(/[A-Z]:\\[^\s]+/g, '[path]')  // Remplace les chemins Windows
+    .replace(/at\s+.+\(.+\)/g, '')  // Supprime les références de stack trace
+    .trim();
+  return sanitized;
+};
+
 // Middleware de gestion des erreurs global
 const errorHandler = (err, req, res, next) => {
+  // Log l'erreur complète côté serveur (jamais exposée au client)
   console.error('Erreur capturée:', err);
 
   // Erreur de validation SQLite (contrainte unique, etc.)
@@ -12,7 +24,7 @@ const errorHandler = (err, req, res, next) => {
     return res.status(HTTP_STATUS.BAD_REQUEST).json({
       success: false,
       message: ERROR_MESSAGES.DUPLICATE_ENTRY,
-      details: err.message
+      details: 'Une contrainte de base de données a été violée'
     });
   }
 
@@ -25,11 +37,10 @@ const errorHandler = (err, req, res, next) => {
     });
   }
 
-  // Erreur par défaut
+  // Erreur par défaut - ne jamais exposer les détails en production
   res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
     success: false,
-    message: ERROR_MESSAGES.SERVER_ERROR,
-    details: process.env.NODE_ENV === 'development' ? err.message : undefined
+    message: ERROR_MESSAGES.SERVER_ERROR
   });
 };
 
