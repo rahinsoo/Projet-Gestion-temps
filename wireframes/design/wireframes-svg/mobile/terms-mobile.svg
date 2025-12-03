@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812" width="375" height="812">
+  <!-- Mobile Terms Wireframe -->
+  <title>Terms - Mobile Wireframe</title>
+  
+  <!-- Background -->
+  <rect width="375" height="812" fill="#f5f5f5"/>
+  
+  <!-- Status Bar -->
+  <rect width="375" height="44" fill="#ffffff"/>
+  <text x="187" y="28" text-anchor="middle" font-family="system-ui" font-size="14" fill="#333">9:41</text>
+  
+  <!-- Header -->
+  <rect y="44" width="375" height="60" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="20" y="80" font-family="system-ui" font-size="18">←</text>
+  <text x="187" y="82" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#333">CGU</text>
+  
+  <!-- TOC Accordion -->
+  <rect x="20" y="120" width="335" height="45" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="40" y="148" font-family="system-ui" font-size="13" fill="#333">📋 Table des matières</text>
+  <text x="325" y="148" font-family="system-ui" font-size="14" fill="#999">▼</text>
+  
+  <!-- Content Card -->
+  <rect x="20" y="180" width="335" height="570" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Title -->
+  <text x="187" y="225" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="bold" fill="#333">Conditions Générales</text>
+  <text x="187" y="248" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="bold" fill="#333">d'Utilisation</text>
+  <text x="187" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#666">En vigueur au 1er décembre 2024</text>
+  
+  <!-- Article 1 -->
+  <text x="40" y="320" font-family="system-ui" font-size="15" font-weight="600" fill="#333">Article 1 - Objet</text>
+  <text x="40" y="345" font-family="system-ui" font-size="12" fill="#666">Les présentes CGU ont pour objet</text>
+  <text x="40" y="365" font-family="system-ui" font-size="12" fill="#666">de définir les modalités d'utilisation</text>
+  <text x="40" y="385" font-family="system-ui" font-size="12" fill="#666">du service TimeManager.</text>
+  
+  <text x="40" y="415" font-family="system-ui" font-size="12" fill="#666">L'utilisation du service implique</text>
+  <text x="40" y="435" font-family="system-ui" font-size="12" fill="#666">l'acceptation des présentes CGU.</text>
+  
+  <line x1="40" y1="460" x2="315" y2="460" stroke="#f0f0f0"/>
+  
+  <!-- Article 2 -->
+  <text x="40" y="490" font-family="system-ui" font-size="15" font-weight="600" fill="#333">Article 2 - Accès</text>
+  <text x="40" y="515" font-family="system-ui" font-size="12" fill="#666">Le service est accessible :</text>
+  
+  <text x="50" y="540" font-family="system-ui" font-size="11" fill="#666">• Personnes physiques capables</text>
+  <text x="50" y="560" font-family="system-ui" font-size="11" fill="#666">• Personnes morales via représentant</text>
+  <text x="50" y="580" font-family="system-ui" font-size="11" fill="#666">• 24h/24, 7j/7</text>
+  
+  <line x1="40" y1="605" x2="315" y2="605" stroke="#f0f0f0"/>
+  
+  <!-- Article 3 -->
+  <text x="40" y="635" font-family="system-ui" font-size="15" font-weight="600" fill="#333">Article 3 - Inscription</text>
+  <text x="40" y="660" font-family="system-ui" font-size="12" fill="#666">L'inscription est réservée aux</text>
+  <text x="40" y="680" font-family="system-ui" font-size="12" fill="#666">utilisateurs avec compte entreprise</text>
+  <text x="40" y="700" font-family="system-ui" font-size="12" fill="#666">ou invitation d'un admin.</text>
+  
+  <!-- Scroll indicator -->
+  <text x="280" y="730" font-family="system-ui" font-size="10" fill="#999">↓ Suite</text>
+  
+  <!-- Footer -->
+  <rect y="755" width="375" height="57" fill="#333"/>
+  <text x="187" y="790" text-anchor="middle" font-family="system-ui" font-size="11" fill="#999">© 2024 TimeManager</text>
+</svg>

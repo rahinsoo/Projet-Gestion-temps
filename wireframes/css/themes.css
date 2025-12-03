@@ -1,0 +1,269 @@
+/**
+ * Thèmes - Outil de Gestion de Temps de Travail
+ * Variables CSS pour les modes clair et sombre
+ */
+
+/* ==========================================================================
+   Mode Clair (Default)
+   ========================================================================== */
+
+:root {
+  /* Couleurs de fond */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-hover: #ebebeb;
+
+  /* Couleurs de texte */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+
+  /* Couleurs d'accent */
+  --accent: #4A90E2;
+  --accent-hover: #3a7bc8;
+
+  /* Couleurs sémantiques */
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --info: #17a2b8;
+
+  /* Bordures */
+  --border: #e0e0e0;
+
+  /* Ombres */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+
+  /* Couleurs de projets/calendrier */
+  --color-project-1: #4A90E2;
+  --color-project-2: #7B68EE;
+  --color-project-3: #FF6B6B;
+  --color-project-4: #4ECDC4;
+  --color-project-5: #FFD93D;
+  --color-project-6: #6BCB77;
+}
+
+/* ==========================================================================
+   Mode Sombre
+   ========================================================================== */
+
+[data-theme="dark"] {
+  /* Couleurs de fond */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-hover: #3d3d3d;
+
+  /* Couleurs de texte */
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+
+  /* Couleurs d'accent */
+  --accent: #5ba3ff;
+  --accent-hover: #7ab5ff;
+
+  /* Couleurs sémantiques (légèrement ajustées pour le mode sombre) */
+  --success: #34ce57;
+  --warning: #ffca2c;
+  --danger: #e64757;
+  --info: #20c9e0;
+
+  /* Bordures */
+  --border: #404040;
+
+  /* Ombres */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+  /* Couleurs de projets/calendrier (versions sombres) */
+  --color-project-1: #5ba3ff;
+  --color-project-2: #9486ff;
+  --color-project-3: #ff8585;
+  --color-project-4: #6fe0d8;
+  --color-project-5: #ffe066;
+  --color-project-6: #85dc8f;
+}
+
+/* ==========================================================================
+   Ajustements spécifiques au mode sombre
+   ========================================================================== */
+
+[data-theme="dark"] .card {
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .auth-card {
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] .modal {
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] .dropdown-menu {
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] img {
+  opacity: 0.9;
+}
+
+/* Ajustements pour les images et icônes SVG */
+[data-theme="dark"] .sidebar-logo,
+[data-theme="dark"] .auth-logo {
+  filter: brightness(1.2);
+}
+
+/* Ajustements pour les graphiques placeholder */
+[data-theme="dark"] .chart-placeholder {
+  border: 1px solid var(--border);
+}
+
+/* ==========================================================================
+   Transitions globales pour le changement de thème
+   ========================================================================== */
+
+body,
+.sidebar,
+.topbar,
+.card,
+.modal,
+.dropdown-menu,
+.table,
+.btn,
+.form-control,
+.badge {
+  transition: 
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ==========================================================================
+   Indicateur de thème (icône soleil/lune)
+   ========================================================================== */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-hover);
+}
+
+.theme-toggle-label {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  user-select: none;
+}
+
+.theme-toggle-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-icon {
+  font-size: 1rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-icon.sun {
+  color: #ffc107;
+}
+
+.theme-icon.moon {
+  color: #6c757d;
+}
+
+/* État du mode clair */
+:root .theme-icon.sun {
+  opacity: 1;
+  transform: scale(1);
+}
+
+:root .theme-icon.moon {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+
+/* État du mode sombre */
+[data-theme="dark"] .theme-icon.sun {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+
+[data-theme="dark"] .theme-icon.moon {
+  opacity: 1;
+  transform: scale(1);
+  color: #5ba3ff;
+}
+
+/* ==========================================================================
+   Préférence système pour le thème sombre
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* Applique le thème sombre si aucune préférence n'est enregistrée */
+  }
+}
+
+/* ==========================================================================
+   Scrollbar personnalisée
+   ========================================================================== */
+
+/* Mode clair */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Sélection de texte
+   ========================================================================== */
+
+::selection {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+[data-theme="dark"] ::selection {
+  background-color: var(--accent);
+  color: #000000;
+}
+
+/* ==========================================================================
+   Focus visible (accessibilité)
+   ========================================================================== */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] :focus-visible {
+  outline-color: var(--accent);
+}

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Paramètres - Outil de Gestion de Temps de Travail">
+  <title>Paramètres - TimeManager</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/themes.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+</head>
+<body data-role="employee">
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="../assets/logo.svg" alt="TimeManager" class="sidebar-logo">
+        <span class="sidebar-title">TimeManager</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Principal</div>
+          <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+          <a href="calendar.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Calendrier</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Gestion</div>
+          <a href="clients.html" class="nav-item">
+            <span class="nav-icon">👥</span>
+            <span class="nav-label">Clients</span>
+          </a>
+          <a href="projects.html" class="nav-item">
+            <span class="nav-icon">📁</span>
+            <span class="nav-label">Projets</span>
+          </a>
+          <a href="tasks.html" class="nav-item">
+            <span class="nav-icon">✅</span>
+            <span class="nav-label">Tâches</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Compte</div>
+          <a href="profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profil</span>
+          </a>
+          <a href="settings.html" class="nav-item active">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Paramètres</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="nav-item">
+          <span class="nav-icon">🚪</span>
+          <span class="nav-label">Déconnexion</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Overlay pour mobile -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+          <div class="topbar-search">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="Rechercher...">
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+            <span class="notification-badge">3</span>
+          </button>
+
+          <div class="dropdown">
+            <div class="user-menu dropdown-trigger">
+              <div class="user-avatar">JD</div>
+              <div class="user-info">
+                <span class="user-name">Jean Dupont</span>
+                <span class="user-role role-display">Employé</span>
+              </div>
+            </div>
+            <div class="dropdown-menu">
+              <a href="profile.html" class="dropdown-item">👤 Mon profil</a>
+              <a href="settings.html" class="dropdown-item">⚙️ Paramètres</a>
+              <div class="dropdown-divider"></div>
+              <a href="login.html" class="dropdown-item">🚪 Déconnexion</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Contenu de la page -->
+      <div class="page-content">
+        <!-- En-tête de page -->
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Paramètres</h1>
+            <nav class="breadcrumb">
+              <span class="breadcrumb-item"><a href="../index.html">Accueil</a></span>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-item active">Paramètres</span>
+            </nav>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3" style="gap: 1.5rem; align-items: flex-start;">
+          <!-- Menu de navigation des paramètres -->
+          <div class="card">
+            <div class="card-body" style="padding: 0.5rem;">
+              <nav>
+                <a href="#appearance" class="nav-item active" onclick="showSection('appearance')">
+                  <span class="nav-icon">🎨</span>
+                  <span class="nav-label">Apparence</span>
+                </a>
+                <a href="#notifications" class="nav-item" onclick="showSection('notifications')">
+                  <span class="nav-icon">🔔</span>
+                  <span class="nav-label">Notifications</span>
+                </a>
+                <a href="#security" class="nav-item" onclick="showSection('security')">
+                  <span class="nav-icon">🔒</span>
+                  <span class="nav-label">Sécurité</span>
+                </a>
+                <a href="#account" class="nav-item" onclick="showSection('account')">
+                  <span class="nav-icon">👤</span>
+                  <span class="nav-label">Compte</span>
+                </a>
+                <a href="#integrations" class="nav-item" onclick="showSection('integrations')">
+                  <span class="nav-icon">🔗</span>
+                  <span class="nav-label">Intégrations</span>
+                </a>
+                <div id="admin-settings-nav" style="display: none;">
+                  <hr style="margin: 0.5rem 0; border-color: var(--border);">
+                  <a href="#admin" class="nav-item" onclick="showSection('admin')">
+                    <span class="nav-icon">🛠️</span>
+                    <span class="nav-label">Administration</span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Contenu des paramètres -->
+          <div style="grid-column: span 2;">
+            <!-- Section Apparence -->
+            <div id="section-appearance" class="settings-section">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">🎨 Apparence</h3>
+                </div>
+                <div class="card-body">
+                  <!-- Thème -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Thème</h4>
+                      <p class="text-sm text-muted">Choisissez entre le mode clair et sombre</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="theme-icon sun">☀️</span>
+                      <label class="toggle">
+                        <input type="checkbox" data-theme-switch>
+                        <span class="toggle-slider"></span>
+                      </label>
+                      <span class="theme-icon moon">🌙</span>
+                    </div>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Langue -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Langue</h4>
+                      <p class="text-sm text-muted">Sélectionnez la langue de l'interface</p>
+                    </div>
+                    <select class="form-control" style="width: 200px;">
+                      <option value="fr" selected>🇫🇷 Français</option>
+                      <option value="en">🇬🇧 English</option>
+                      <option value="es">🇪🇸 Español</option>
+                      <option value="de">🇩🇪 Deutsch</option>
+                    </select>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Format de date -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Format de date</h4>
+                      <p class="text-sm text-muted">Format d'affichage des dates</p>
+                    </div>
+                    <select class="form-control" style="width: 200px;">
+                      <option value="dd/mm/yyyy" selected>JJ/MM/AAAA</option>
+                      <option value="mm/dd/yyyy">MM/JJ/AAAA</option>
+                      <option value="yyyy-mm-dd">AAAA-MM-JJ</option>
+                    </select>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Premier jour de la semaine -->
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <h4>Premier jour de la semaine</h4>
+                      <p class="text-sm text-muted">Définir le début de la semaine</p>
+                    </div>
+                    <select class="form-control" style="width: 200px;">
+                      <option value="monday" selected>Lundi</option>
+                      <option value="sunday">Dimanche</option>
+                      <option value="saturday">Samedi</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section Notifications -->
+            <div id="section-notifications" class="settings-section" style="display: none;">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">🔔 Notifications</h3>
+                </div>
+                <div class="card-body">
+                  <!-- Notifications email -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Notifications par email</h4>
+                      <p class="text-sm text-muted">Recevoir des notifications par email</p>
+                    </div>
+                    <label class="toggle">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Rappels de tâches -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Rappels de tâches</h4>
+                      <p class="text-sm text-muted">Rappel avant l'échéance d'une tâche</p>
+                    </div>
+                    <select class="form-control" style="width: 200px;">
+                      <option value="none">Désactivé</option>
+                      <option value="1h">1 heure avant</option>
+                      <option value="1d" selected>1 jour avant</option>
+                      <option value="3d">3 jours avant</option>
+                    </select>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Notifications push -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Notifications push</h4>
+                      <p class="text-sm text-muted">Notifications dans le navigateur</p>
+                    </div>
+                    <label class="toggle">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Résumé hebdomadaire -->
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <h4>Résumé hebdomadaire</h4>
+                      <p class="text-sm text-muted">Recevoir un email récapitulatif chaque semaine</p>
+                    </div>
+                    <label class="toggle">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section Sécurité -->
+            <div id="section-security" class="settings-section" style="display: none;">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">🔒 Sécurité</h3>
+                </div>
+                <div class="card-body">
+                  <!-- Changer le mot de passe -->
+                  <div class="mb-4">
+                    <h4>Changer le mot de passe</h4>
+                    <p class="text-sm text-muted mb-2">Assurez-vous d'utiliser un mot de passe fort</p>
+                    <form data-validate>
+                      <div class="form-group">
+                        <label for="current-password" class="form-label">Mot de passe actuel</label>
+                        <input type="password" id="current-password" class="form-control" placeholder="••••••••">
+                      </div>
+                      <div class="grid grid-cols-2" style="gap: 1rem;">
+                        <div class="form-group">
+                          <label for="new-password" class="form-label">Nouveau mot de passe</label>
+                          <input type="password" id="new-password" class="form-control" placeholder="••••••••">
+                        </div>
+                        <div class="form-group">
+                          <label for="confirm-password" class="form-label">Confirmer</label>
+                          <input type="password" id="confirm-password" class="form-control" placeholder="••••••••">
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                    </form>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Authentification à deux facteurs -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Authentification à deux facteurs</h4>
+                      <p class="text-sm text-muted">Ajouter une couche de sécurité supplémentaire</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm">Configurer</button>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Sessions actives -->
+                  <div>
+                    <h4>Sessions actives</h4>
+                    <p class="text-sm text-muted mb-2">Appareils connectés à votre compte</p>
+                    <div class="card" style="background: var(--bg-secondary);">
+                      <div class="card-body" style="padding: 1rem;">
+                        <div class="flex justify-between items-center">
+                          <div>
+                            <p><strong>💻 Chrome sur Windows</strong></p>
+                            <p class="text-sm text-muted">Paris, France • Session actuelle</p>
+                          </div>
+                          <span class="badge badge-success">Actif</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mt-2" style="background: var(--bg-secondary);">
+                      <div class="card-body" style="padding: 1rem;">
+                        <div class="flex justify-between items-center">
+                          <div>
+                            <p><strong>📱 Safari sur iPhone</strong></p>
+                            <p class="text-sm text-muted">Paris, France • Dernière activité il y a 2 jours</p>
+                          </div>
+                          <button class="btn btn-danger btn-sm">Déconnecter</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section Compte -->
+            <div id="section-account" class="settings-section" style="display: none;">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">👤 Compte</h3>
+                </div>
+                <div class="card-body">
+                  <!-- Informations du compte -->
+                  <div class="mb-4">
+                    <h4>Informations du compte</h4>
+                    <div class="grid grid-cols-2 mt-2" style="gap: 1rem;">
+                      <div>
+                        <p class="text-sm text-muted">Email</p>
+                        <p><strong>jean.dupont@entreprise.com</strong></p>
+                      </div>
+                      <div>
+                        <p class="text-sm text-muted">Rôle</p>
+                        <p><span class="role-badge employee">👤 Employé</span></p>
+                      </div>
+                      <div>
+                        <p class="text-sm text-muted">Date de création</p>
+                        <p><strong>15 mars 2022</strong></p>
+                      </div>
+                      <div>
+                        <p class="text-sm text-muted">Dernière connexion</p>
+                        <p><strong>2 décembre 2024, 09:15</strong></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Exportation des données -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Exporter mes données</h4>
+                      <p class="text-sm text-muted">Télécharger toutes vos données personnelles</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm">📥 Exporter</button>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Zone de danger -->
+                  <div class="alert alert-danger">
+                    <span class="alert-icon">⚠️</span>
+                    <div class="alert-content">
+                      <strong>Zone de danger</strong>
+                      <p class="text-sm mt-1">Ces actions sont irréversibles.</p>
+                      <div class="flex gap-1 mt-2">
+                        <button class="btn btn-danger btn-sm">Désactiver mon compte</button>
+                        <button class="btn btn-outline btn-sm" style="border-color: var(--danger); color: var(--danger);">Supprimer mon compte</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section Intégrations -->
+            <div id="section-integrations" class="settings-section" style="display: none;">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">🔗 Intégrations</h3>
+                </div>
+                <div class="card-body">
+                  <p class="text-muted mb-3">Connectez TimeManager à vos outils préférés.</p>
+
+                  <!-- Google Calendar -->
+                  <div class="flex justify-between items-center mb-3 p-3" style="background: var(--bg-secondary); border-radius: 8px;">
+                    <div class="flex items-center gap-2">
+                      <span style="font-size: 1.5rem;">📅</span>
+                      <div>
+                        <h4>Google Calendar</h4>
+                        <p class="text-sm text-muted">Synchronisez vos événements</p>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm">Connecter</button>
+                  </div>
+
+                  <!-- Slack -->
+                  <div class="flex justify-between items-center mb-3 p-3" style="background: var(--bg-secondary); border-radius: 8px;">
+                    <div class="flex items-center gap-2">
+                      <span style="font-size: 1.5rem;">💬</span>
+                      <div>
+                        <h4>Slack</h4>
+                        <p class="text-sm text-muted">Recevez des notifications sur Slack</p>
+                      </div>
+                    </div>
+                    <span class="badge badge-success">Connecté</span>
+                  </div>
+
+                  <!-- Jira -->
+                  <div class="flex justify-between items-center mb-3 p-3" style="background: var(--bg-secondary); border-radius: 8px;">
+                    <div class="flex items-center gap-2">
+                      <span style="font-size: 1.5rem;">📋</span>
+                      <div>
+                        <h4>Jira</h4>
+                        <p class="text-sm text-muted">Synchronisez vos tickets</p>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm">Connecter</button>
+                  </div>
+
+                  <!-- GitHub -->
+                  <div class="flex justify-between items-center p-3" style="background: var(--bg-secondary); border-radius: 8px;">
+                    <div class="flex items-center gap-2">
+                      <span style="font-size: 1.5rem;">🐙</span>
+                      <div>
+                        <h4>GitHub</h4>
+                        <p class="text-sm text-muted">Liez vos commits à vos tâches</p>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm">Connecter</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section Administration (Admin only) -->
+            <div id="section-admin" class="settings-section" style="display: none;">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">🛠️ Administration</h3>
+                  <span class="badge badge-danger">Admin uniquement</span>
+                </div>
+                <div class="card-body">
+                  <div class="alert alert-warning mb-3">
+                    <span class="alert-icon">⚠️</span>
+                    <div class="alert-content">
+                      <strong>Zone réservée aux administrateurs</strong>
+                      <p class="text-sm">Ces paramètres affectent tous les utilisateurs de la plateforme.</p>
+                    </div>
+                  </div>
+
+                  <!-- Gestion des utilisateurs -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Gestion des utilisateurs</h4>
+                      <p class="text-sm text-muted">Ajouter, modifier ou supprimer des utilisateurs</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm">Gérer</button>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Rôles et permissions -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Rôles et permissions</h4>
+                      <p class="text-sm text-muted">Configurer les droits d'accès</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm">Configurer</button>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Paramètres de l'entreprise -->
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <h4>Paramètres de l'entreprise</h4>
+                      <p class="text-sm text-muted">Logo, nom, informations légales</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm">Modifier</button>
+                  </div>
+
+                  <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+                  <!-- Logs d'audit -->
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <h4>Logs d'audit</h4>
+                      <p class="text-sm text-muted">Historique des actions sensibles</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm">Consulter</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../js/theme-switcher.js"></script>
+  <script src="../js/main.js"></script>
+  
+  <script>
+    // Navigation entre les sections
+    function showSection(sectionId) {
+      // Cacher toutes les sections
+      document.querySelectorAll('.settings-section').forEach(function(section) {
+        section.style.display = 'none';
+      });
+      
+      // Afficher la section sélectionnée
+      const targetSection = document.getElementById('section-' + sectionId);
+      if (targetSection) {
+        targetSection.style.display = 'block';
+      }
+      
+      // Mettre à jour la navigation
+      document.querySelectorAll('.card .nav-item').forEach(function(item) {
+        item.classList.remove('active');
+      });
+      
+      event.target.closest('.nav-item').classList.add('active');
+    }
+
+    // Afficher les paramètres admin selon le rôle
+    function updateSettingsForRole() {
+      const role = document.body.getAttribute('data-role');
+      const adminNav = document.getElementById('admin-settings-nav');
+      
+      if (role === 'admin') {
+        adminNav.style.display = 'block';
+      } else {
+        adminNav.style.display = 'none';
+      }
+    }
+
+    // Observer les changements de rôle
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'data-role') {
+          updateSettingsForRole();
+        }
+      });
+    });
+
+    observer.observe(document.body, { attributes: true });
+    
+    // Initialiser
+    document.addEventListener('DOMContentLoaded', updateSettingsForRole);
+  </script>
+</body>
+</html>

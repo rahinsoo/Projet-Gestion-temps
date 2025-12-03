@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Profil Utilisateur - Outil de Gestion de Temps de Travail">
+  <title>Mon Profil - TimeManager</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/themes.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+</head>
+<body data-role="employee">
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="../assets/logo.svg" alt="TimeManager" class="sidebar-logo">
+        <span class="sidebar-title">TimeManager</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Principal</div>
+          <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+          <a href="calendar.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Calendrier</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Gestion</div>
+          <a href="clients.html" class="nav-item">
+            <span class="nav-icon">👥</span>
+            <span class="nav-label">Clients</span>
+          </a>
+          <a href="projects.html" class="nav-item">
+            <span class="nav-icon">📁</span>
+            <span class="nav-label">Projets</span>
+          </a>
+          <a href="tasks.html" class="nav-item">
+            <span class="nav-icon">✅</span>
+            <span class="nav-label">Tâches</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Compte</div>
+          <a href="profile.html" class="nav-item active">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profil</span>
+          </a>
+          <a href="settings.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Paramètres</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="nav-item">
+          <span class="nav-icon">🚪</span>
+          <span class="nav-label">Déconnexion</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Overlay pour mobile -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+          <div class="topbar-search">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="Rechercher...">
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+            <span class="notification-badge">3</span>
+          </button>
+
+          <div class="dropdown">
+            <div class="user-menu dropdown-trigger">
+              <div class="user-avatar">JD</div>
+              <div class="user-info">
+                <span class="user-name">Jean Dupont</span>
+                <span class="user-role role-display">Employé</span>
+              </div>
+            </div>
+            <div class="dropdown-menu">
+              <a href="profile.html" class="dropdown-item">👤 Mon profil</a>
+              <a href="settings.html" class="dropdown-item">⚙️ Paramètres</a>
+              <div class="dropdown-divider"></div>
+              <a href="login.html" class="dropdown-item">🚪 Déconnexion</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Contenu de la page -->
+      <div class="page-content">
+        <!-- En-tête de page -->
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Mon Profil</h1>
+            <nav class="breadcrumb">
+              <span class="breadcrumb-item"><a href="../index.html">Accueil</a></span>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-item active">Profil</span>
+            </nav>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary" data-modal-open="modal-edit-profile">
+              ✏️ Modifier le profil
+            </button>
+          </div>
+        </div>
+
+        <!-- En-tête du profil -->
+        <div class="profile-header">
+          <div class="profile-avatar">JD</div>
+          <div class="profile-info">
+            <h1>Jean Dupont</h1>
+            <p class="profile-role">
+              <span class="role-badge employee">👤 Employé</span>
+            </p>
+            <p class="profile-email">📧 jean.dupont@entreprise.com</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-value">156h</div>
+                <div class="profile-stat-label">Ce mois</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-value">1 842h</div>
+                <div class="profile-stat-label">Cette année</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-value">8</div>
+                <div class="profile-stat-label">Projets</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-value">45</div>
+                <div class="profile-stat-label">Tâches terminées</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenu du profil -->
+        <div class="grid grid-cols-2">
+          <!-- Informations personnelles -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">📋 Informations personnelles</h3>
+            </div>
+            <div class="card-body">
+              <div class="grid grid-cols-2" style="gap: 1rem;">
+                <div>
+                  <p class="text-sm text-muted">Prénom</p>
+                  <p><strong>Jean</strong></p>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Nom</p>
+                  <p><strong>Dupont</strong></p>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Email</p>
+                  <p><strong>jean.dupont@entreprise.com</strong></p>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Téléphone</p>
+                  <p><strong>+33 6 12 34 56 78</strong></p>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Département</p>
+                  <p><strong>Développement</strong></p>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Poste</p>
+                  <p><strong>Développeur Full-Stack</strong></p>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Date d'embauche</p>
+                  <p><strong>15 mars 2022</strong></p>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Responsable</p>
+                  <p><strong>Sophie Martin</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Statistiques personnelles -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">📊 Statistiques personnelles</h3>
+              <select class="form-control" style="width: auto; padding: 0.25rem 0.5rem; font-size: 0.875rem;">
+                <option>Ce mois</option>
+                <option>Cette semaine</option>
+                <option>Cette année</option>
+              </select>
+            </div>
+            <div class="card-body">
+              <div class="chart-placeholder" style="height: 180px; margin-bottom: 1rem;">
+                <span class="chart-placeholder-icon">📈</span>
+                <span>Graphique des heures (Chart.js)</span>
+              </div>
+              
+              <div class="grid grid-cols-2" style="gap: 1rem; margin-top: 1rem;">
+                <div class="stat-card">
+                  <div class="stat-icon primary">⏱️</div>
+                  <div class="stat-content">
+                    <div class="stat-value" style="font-size: 1.25rem;">7.8h</div>
+                    <div class="stat-label">Moyenne/jour</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon success">✅</div>
+                  <div class="stat-content">
+                    <div class="stat-value" style="font-size: 1.25rem;">92%</div>
+                    <div class="stat-label">Taux complétion</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projets en cours et Activité récente -->
+        <div class="grid grid-cols-2 mt-3">
+          <!-- Projets en cours -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">📁 Mes projets en cours</h3>
+              <a href="projects.html" class="btn btn-sm btn-secondary">Voir tout</a>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <div class="table-container" style="border: none;">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Projet</th>
+                      <th>Client</th>
+                      <th>Mon temps</th>
+                      <th>Progression</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Projet"><strong>Projet Alpha</strong></td>
+                      <td data-label="Client">TechCorp SA</td>
+                      <td data-label="Temps">48h</td>
+                      <td data-label="Progression">
+                        <div style="background: var(--bg-secondary); border-radius: 4px; height: 6px; width: 80px;">
+                          <div style="background: var(--accent); height: 100%; width: 80%; border-radius: 4px;"></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Projet"><strong>Projet Beta</strong></td>
+                      <td data-label="Client">FinanceStart</td>
+                      <td data-label="Temps">24h</td>
+                      <td data-label="Progression">
+                        <div style="background: var(--bg-secondary); border-radius: 4px; height: 6px; width: 80px;">
+                          <div style="background: var(--success); height: 100%; width: 22%; border-radius: 4px;"></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Projet"><strong>App Mobile</strong></td>
+                      <td data-label="Client">HealthPlus</td>
+                      <td data-label="Temps">62h</td>
+                      <td data-label="Progression">
+                        <div style="background: var(--bg-secondary); border-radius: 4px; height: 6px; width: 80px;">
+                          <div style="background: var(--danger); height: 100%; width: 80%; border-radius: 4px;"></div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activité récente -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">🕒 Historique d'activité</h3>
+            </div>
+            <div class="card-body" style="padding: 0 1.5rem;">
+              <ul class="activity-list">
+                <li class="activity-item">
+                  <div class="activity-icon stat-icon primary">✏️</div>
+                  <div class="activity-content">
+                    <p class="activity-title">Temps saisi : <strong>6h</strong> sur Projet Alpha</p>
+                    <span class="activity-time">Aujourd'hui, 17:30</span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-icon stat-icon success">✅</div>
+                  <div class="activity-content">
+                    <p class="activity-title">Tâche terminée : <strong>Configuration serveur</strong></p>
+                    <span class="activity-time">Hier, 16:45</span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-icon stat-icon warning">📝</div>
+                  <div class="activity-content">
+                    <p class="activity-title">Commentaire ajouté sur <strong>Sprint Review</strong></p>
+                    <span class="activity-time">28 nov, 14:20</span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-icon stat-icon primary">🚀</div>
+                  <div class="activity-content">
+                    <p class="activity-title">Assigné au projet <strong>Projet Beta</strong></p>
+                    <span class="activity-time">27 nov, 09:00</span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-icon stat-icon success">✅</div>
+                  <div class="activity-content">
+                    <p class="activity-title">Tâche terminée : <strong>Analyse des besoins</strong></p>
+                    <span class="activity-time">26 nov, 18:00</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-secondary btn-sm">Voir tout l'historique</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compétences et Certifications -->
+        <div class="card mt-3">
+          <div class="card-header">
+            <h3 class="card-title">🎯 Compétences et Certifications</h3>
+            <button class="btn btn-sm btn-secondary">+ Ajouter</button>
+          </div>
+          <div class="card-body">
+            <div class="flex flex-wrap gap-1">
+              <span class="badge badge-primary">JavaScript</span>
+              <span class="badge badge-primary">React</span>
+              <span class="badge badge-primary">Node.js</span>
+              <span class="badge badge-primary">TypeScript</span>
+              <span class="badge badge-primary">Python</span>
+              <span class="badge badge-primary">SQL</span>
+              <span class="badge badge-success">AWS Certified</span>
+              <span class="badge badge-success">Scrum Master</span>
+              <span class="badge badge-secondary">Git</span>
+              <span class="badge badge-secondary">Docker</span>
+              <span class="badge badge-secondary">CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal Modifier le profil -->
+  <div class="modal-overlay" id="modal-edit-profile">
+    <div class="modal" style="max-width: 550px;">
+      <div class="modal-header">
+        <h2 class="modal-title">Modifier le profil</h2>
+        <button class="modal-close" data-modal-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <form data-validate id="form-profile">
+          <!-- Photo de profil -->
+          <div class="form-group text-center mb-3">
+            <div class="profile-avatar" style="width: 100px; height: 100px; font-size: 2.5rem; margin: 0 auto 1rem;">JD</div>
+            <button type="button" class="btn btn-secondary btn-sm">📷 Changer la photo</button>
+          </div>
+
+          <div class="grid grid-cols-2" style="gap: 1rem;">
+            <div class="form-group">
+              <label for="profile-firstname" class="form-label required">Prénom</label>
+              <input type="text" id="profile-firstname" class="form-control" value="Jean" required>
+            </div>
+            <div class="form-group">
+              <label for="profile-lastname" class="form-label required">Nom</label>
+              <input type="text" id="profile-lastname" class="form-control" value="Dupont" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="profile-email" class="form-label required">Email</label>
+            <input type="email" id="profile-email" class="form-control" value="jean.dupont@entreprise.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="profile-phone" class="form-label">Téléphone</label>
+            <input type="tel" id="profile-phone" class="form-control" value="+33 6 12 34 56 78">
+          </div>
+
+          <div class="form-group">
+            <label for="profile-position" class="form-label">Poste</label>
+            <input type="text" id="profile-position" class="form-control" value="Développeur Full-Stack">
+          </div>
+
+          <div class="form-group">
+            <label for="profile-bio" class="form-label">Bio</label>
+            <textarea id="profile-bio" class="form-control" rows="3" placeholder="Parlez-nous de vous..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-modal-close>Annuler</button>
+        <button type="submit" form="form-profile" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../js/theme-switcher.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

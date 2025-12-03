@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900">
+  <!-- Desktop Dashboard Wireframe -->
+  <title>Dashboard - Desktop Wireframe</title>
+  
+  <!-- Background -->
+  <rect width="1440" height="900" fill="#f5f5f5"/>
+  
+  <!-- Sidebar -->
+  <rect width="250" height="900" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Logo -->
+  <g transform="translate(20, 20)">
+    <circle cx="20" cy="20" r="18" fill="none" stroke="#4A90E2" stroke-width="2"/>
+    <line x1="20" y1="8" x2="20" y2="16" stroke="#4A90E2" stroke-width="2" stroke-linecap="round"/>
+    <line x1="20" y1="20" x2="28" y2="20" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="50" y="28" font-family="system-ui" font-size="18" font-weight="bold" fill="#4A90E2">TimeManager</text>
+  </g>
+  
+  <!-- Nav Section 1 -->
+  <g transform="translate(0, 80)">
+    <text x="20" y="20" font-family="system-ui" font-size="11" fill="#999" text-transform="uppercase">PRINCIPAL</text>
+    
+    <rect x="0" y="30" width="250" height="44" fill="#4A90E2"/>
+    <text x="50" y="58" font-family="system-ui" font-size="14" fill="#ffffff">📊 Tableau de bord</text>
+    
+    <g transform="translate(0, 54)">
+      <rect x="0" y="0" width="250" height="44" fill="transparent"/>
+      <text x="50" y="28" font-family="system-ui" font-size="14" fill="#666">📅 Calendrier</text>
+    </g>
+  </g>
+  
+  <!-- Nav Section 2 -->
+  <g transform="translate(0, 200)">
+    <text x="20" y="20" font-family="system-ui" font-size="11" fill="#999">GESTION</text>
+    
+    <g transform="translate(0, 30)">
+      <text x="50" y="28" font-family="system-ui" font-size="14" fill="#666">👥 Clients</text>
+    </g>
+    <g transform="translate(0, 74)">
+      <text x="50" y="28" font-family="system-ui" font-size="14" fill="#666">📁 Projets</text>
+    </g>
+    <g transform="translate(0, 118)">
+      <text x="50" y="28" font-family="system-ui" font-size="14" fill="#666">✅ Tâches</text>
+    </g>
+  </g>
+  
+  <!-- Nav Section 3 -->
+  <g transform="translate(0, 380)">
+    <text x="20" y="20" font-family="system-ui" font-size="11" fill="#999">COMPTE</text>
+    
+    <g transform="translate(0, 30)">
+      <text x="50" y="28" font-family="system-ui" font-size="14" fill="#666">👤 Profil</text>
+    </g>
+    <g transform="translate(0, 74)">
+      <text x="50" y="28" font-family="system-ui" font-size="14" fill="#666">⚙️ Paramètres</text>
+    </g>
+  </g>
+  
+  <!-- Logout -->
+  <g transform="translate(0, 840)">
+    <text x="50" y="28" font-family="system-ui" font-size="14" fill="#666">🚪 Déconnexion</text>
+  </g>
+  
+  <!-- Top Bar -->
+  <rect x="250" y="0" width="1190" height="64" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Search -->
+  <rect x="280" y="14" width="300" height="36" rx="8" fill="#f5f5f5" stroke="#e0e0e0"/>
+  <text x="295" y="38" font-family="system-ui" font-size="14" fill="#999">🔍 Rechercher...</text>
+  
+  <!-- User Menu -->
+  <g transform="translate(1300, 14)">
+    <rect width="110" height="36" rx="8" fill="#f5f5f5"/>
+    <circle cx="18" cy="18" r="14" fill="#4A90E2"/>
+    <text x="18" y="23" text-anchor="middle" font-family="system-ui" font-size="11" fill="#fff">JD</text>
+    <text x="42" y="16" font-family="system-ui" font-size="12" font-weight="500" fill="#333">Jean Dupont</text>
+    <text x="42" y="30" font-family="system-ui" font-size="10" fill="#999">Employé</text>
+  </g>
+  
+  <!-- Notifications -->
+  <g transform="translate(1250, 18)">
+    <text font-size="20">🔔</text>
+    <circle cx="18" cy="2" r="8" fill="#dc3545"/>
+    <text x="18" y="6" text-anchor="middle" font-family="system-ui" font-size="8" fill="#fff">3</text>
+  </g>
+  
+  <!-- Main Content -->
+  <g transform="translate(280, 94)">
+    <!-- Page Header -->
+    <text font-family="system-ui" font-size="24" font-weight="bold" fill="#333">Tableau de bord</text>
+    <text y="25" font-family="system-ui" font-size="12" fill="#999">Accueil / Tableau de bord</text>
+    
+    <!-- Stats Cards Row -->
+    <g transform="translate(0, 50)">
+      <!-- Card 1 -->
+      <rect width="260" height="110" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+      <circle cx="35" cy="40" r="24" fill="#4A90E2" opacity="0.1"/>
+      <text x="35" y="46" text-anchor="middle" font-size="18">⏱️</text>
+      <text x="75" y="40" font-family="system-ui" font-size="28" font-weight="bold" fill="#333">156h</text>
+      <text x="20" y="70" font-family="system-ui" font-size="14" fill="#666">Heures ce mois</text>
+      <text x="20" y="92" font-family="system-ui" font-size="12" fill="#28a745">↑ +12% vs mois dernier</text>
+      
+      <!-- Card 2 -->
+      <g transform="translate(280, 0)">
+        <rect width="260" height="110" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+        <circle cx="35" cy="40" r="24" fill="#28a745" opacity="0.1"/>
+        <text x="35" y="46" text-anchor="middle" font-size="18">📁</text>
+        <text x="75" y="40" font-family="system-ui" font-size="28" font-weight="bold" fill="#333">8</text>
+        <text x="20" y="70" font-family="system-ui" font-size="14" fill="#666">Projets actifs</text>
+        <text x="20" y="92" font-family="system-ui" font-size="12" fill="#28a745">↑ +2 nouveaux</text>
+      </g>
+      
+      <!-- Card 3 -->
+      <g transform="translate(560, 0)">
+        <rect width="260" height="110" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+        <circle cx="35" cy="40" r="24" fill="#ffc107" opacity="0.1"/>
+        <text x="35" y="46" text-anchor="middle" font-size="18">✅</text>
+        <text x="75" y="40" font-family="system-ui" font-size="28" font-weight="bold" fill="#333">24</text>
+        <text x="20" y="70" font-family="system-ui" font-size="14" fill="#666">Tâches en cours</text>
+        <text x="20" y="92" font-family="system-ui" font-size="12" fill="#dc3545">⚠️ 5 en retard</text>
+      </g>
+      
+      <!-- Card 4 -->
+      <g transform="translate(840, 0)">
+        <rect width="260" height="110" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+        <circle cx="35" cy="40" r="24" fill="#dc3545" opacity="0.1"/>
+        <text x="35" y="46" text-anchor="middle" font-size="18">👥</text>
+        <text x="75" y="40" font-family="system-ui" font-size="28" font-weight="bold" fill="#333">12</text>
+        <text x="20" y="70" font-family="system-ui" font-size="14" fill="#666">Clients actifs</text>
+        <text x="20" y="92" font-family="system-ui" font-size="12" fill="#28a745">↑ +1 nouveau</text>
+      </g>
+    </g>
+    
+    <!-- Charts Row -->
+    <g transform="translate(0, 185)">
+      <!-- Hours Chart -->
+      <rect width="540" height="280" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+      <text x="20" y="35" font-family="system-ui" font-size="16" font-weight="600" fill="#333">Heures travaillées</text>
+      <rect x="430" y="18" width="90" height="28" rx="6" fill="#f5f5f5" stroke="#e0e0e0"/>
+      <text x="445" y="38" font-family="system-ui" font-size="12" fill="#666">Ce mois ▼</text>
+      <rect x="20" y="60" width="500" height="200" rx="8" fill="#f5f5f5"/>
+      <text x="270" y="170" text-anchor="middle" font-family="system-ui" font-size="14" fill="#999">📈 Graphique des heures (Chart.js)</text>
+      
+      <!-- Pie Chart -->
+      <g transform="translate(560, 0)">
+        <rect width="540" height="280" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+        <text x="20" y="35" font-family="system-ui" font-size="16" font-weight="600" fill="#333">Répartition par projet</text>
+        <rect x="20" y="60" width="500" height="200" rx="8" fill="#f5f5f5"/>
+        <text x="270" y="170" text-anchor="middle" font-family="system-ui" font-size="14" fill="#999">🥧 Graphique circulaire (Chart.js)</text>
+      </g>
+    </g>
+    
+    <!-- Calendar & Activity Row -->
+    <g transform="translate(0, 490)">
+      <!-- Mini Calendar -->
+      <rect width="540" height="280" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+      <text x="20" y="35" font-family="system-ui" font-size="16" font-weight="600" fill="#333">Décembre 2024</text>
+      <rect x="450" y="15" width="30" height="28" rx="6" fill="#f5f5f5" stroke="#e0e0e0"/>
+      <text x="465" y="35" text-anchor="middle" font-family="system-ui" font-size="14" fill="#666">‹</text>
+      <rect x="490" y="15" width="30" height="28" rx="6" fill="#f5f5f5" stroke="#e0e0e0"/>
+      <text x="505" y="35" text-anchor="middle" font-family="system-ui" font-size="14" fill="#666">›</text>
+      
+      <!-- Calendar Grid -->
+      <g transform="translate(20, 55)">
+        <rect width="500" height="30" fill="#f5f5f5"/>
+        <text x="36" y="20" text-anchor="middle" font-family="system-ui" font-size="11" fill="#999">LUN</text>
+        <text x="107" y="20" text-anchor="middle" font-family="system-ui" font-size="11" fill="#999">MAR</text>
+        <text x="178" y="20" text-anchor="middle" font-family="system-ui" font-size="11" fill="#999">MER</text>
+        <text x="249" y="20" text-anchor="middle" font-family="system-ui" font-size="11" fill="#999">JEU</text>
+        <text x="320" y="20" text-anchor="middle" font-family="system-ui" font-size="11" fill="#999">VEN</text>
+        <text x="391" y="20" text-anchor="middle" font-family="system-ui" font-size="11" fill="#999">SAM</text>
+        <text x="462" y="20" text-anchor="middle" font-family="system-ui" font-size="11" fill="#999">DIM</text>
+        
+        <!-- Calendar Days (simplified) -->
+        <g transform="translate(0, 40)">
+          <text x="36" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#999">25</text>
+          <text x="107" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#999">26</text>
+          <text x="178" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#999">27</text>
+          <text x="249" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#999">28</text>
+          <text x="320" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#999">29</text>
+          <text x="391" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#999">30</text>
+          <text x="462" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#333">1</text>
+        </g>
+        <g transform="translate(0, 75)">
+          <circle cx="36" cy="15" r="14" fill="#4A90E2"/>
+          <text x="36" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#fff">2</text>
+          <text x="107" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#333">3</text>
+          <text x="178" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#333">4</text>
+          <text x="249" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#333">5</text>
+          <text x="320" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#333">6</text>
+          <text x="391" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#333">7</text>
+          <text x="462" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#333">8</text>
+        </g>
+      </g>
+      
+      <!-- Activity -->
+      <g transform="translate(560, 0)">
+        <rect width="540" height="280" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+        <text x="20" y="35" font-family="system-ui" font-size="16" font-weight="600" fill="#333">Activités récentes</text>
+        <rect x="430" y="15" width="90" height="28" rx="6" fill="#f5f5f5" stroke="#e0e0e0"/>
+        <text x="445" y="35" font-family="system-ui" font-size="12" fill="#666">Voir tout</text>
+        
+        <!-- Activity items -->
+        <g transform="translate(20, 55)">
+          <circle cx="18" cy="18" r="18" fill="#4A90E2" opacity="0.1"/>
+          <text x="18" y="24" text-anchor="middle" font-size="14">✏️</text>
+          <text x="50" y="15" font-family="system-ui" font-size="13" fill="#333">4h ajoutées sur <tspan font-weight="600">Projet Alpha</tspan></text>
+          <text x="50" y="32" font-family="system-ui" font-size="11" fill="#999">Il y a 30 minutes</text>
+        </g>
+        
+        <line x1="20" y1="110" x2="520" y2="110" stroke="#e0e0e0"/>
+        
+        <g transform="translate(20, 120)">
+          <circle cx="18" cy="18" r="18" fill="#28a745" opacity="0.1"/>
+          <text x="18" y="24" text-anchor="middle" font-size="14">✅</text>
+          <text x="50" y="15" font-family="system-ui" font-size="13" fill="#333">Tâche <tspan font-weight="600">Design mockups</tspan> terminée</text>
+          <text x="50" y="32" font-family="system-ui" font-size="11" fill="#999">Il y a 2 heures</text>
+        </g>
+        
+        <line x1="20" y1="175" x2="520" y2="175" stroke="#e0e0e0"/>
+        
+        <g transform="translate(20, 185)">
+          <circle cx="18" cy="18" r="18" fill="#ffc107" opacity="0.1"/>
+          <text x="18" y="24" text-anchor="middle" font-size="14">💬</text>
+          <text x="50" y="15" font-family="system-ui" font-size="13" fill="#333">Nouveau commentaire sur <tspan font-weight="600">Sprint Review</tspan></text>
+          <text x="50" y="32" font-family="system-ui" font-size="11" fill="#999">Il y a 4 heures</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Annotation -->
+  <rect x="280" y="850" width="1130" height="40" rx="8" fill="#fff9c4" stroke="#ffc107"/>
+  <text x="300" y="875" font-family="system-ui" font-size="12" fill="#856404">🖥️ Desktop Wireframe - 1440x900 - Dashboard avec sidebar, statistiques, graphiques et activités</text>
+</svg>
